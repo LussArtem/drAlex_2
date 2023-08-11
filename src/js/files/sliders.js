@@ -7,7 +7,8 @@
 // Підключаємо слайдер Swiper з node_modules
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
-import Swiper, { Navigation, Scrollbar, Autoplay} from "swiper";
+import Swiper, { Navigation, Scrollbar, Autoplay, Thumbs } from 'swiper'
+
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay, 
@@ -17,16 +18,16 @@ EffectFade, Lazy, Manipulation
 
 // Стилі Swiper
 // Базові стилі
-import "../../scss/base/swiper.scss";
+import '../../scss/base/swiper.scss'
 // Повний набір стилів з scss/libs/swiper.scss
-import "../../scss/libs/swiper.scss";
+import '../../scss/libs/swiper.scss'
 // Повний набір стилів з node_modules
 // import 'swiper/css';
 
 // Ініціалізація слайдерів
 function initSliders() {
-    if (document.querySelector(".types__body"))
-        new Swiper(".types__body", {
+    if (document.querySelector('.types__body'))
+        new Swiper('.types__body', {
             modules: [Scrollbar],
             observer: true,
             observeParents: true,
@@ -36,7 +37,7 @@ function initSliders() {
             speed: 800,
             freeMode: true,
             scrollbar: {
-                el: ".types__scrollbar",
+                el: '.types__scrollbar',
                 hide: false,
                 draggable: true,
             },
@@ -52,9 +53,9 @@ function initSliders() {
                 },
             },
             on: {},
-        });
-    if (document.querySelector(".works__body"))
-        new Swiper(".works__body", {
+        })
+    if (document.querySelector('.works__body'))
+        new Swiper('.works__body', {
             modules: [Scrollbar, Autoplay],
             observer: true,
             observeParents: true,
@@ -70,7 +71,7 @@ function initSliders() {
                 pauseOnMouseEnter: true,
             },
             scrollbar: {
-                el: ".works__scrollbar",
+                el: '.works__scrollbar',
                 hide: false,
                 draggable: true,
             },
@@ -83,9 +84,9 @@ function initSliders() {
                 },
             },
             on: {},
-        });
-    if (document.querySelector(".reviews__body"))
-        new Swiper(".reviews__body", {
+        })
+    if (document.querySelector('.reviews__body'))
+        new Swiper('.reviews__body', {
             modules: [Scrollbar, Autoplay],
             observer: true,
             observeParents: true,
@@ -95,7 +96,7 @@ function initSliders() {
             speed: 800,
             initialSlide: 1,
             scrollbar: {
-                el: ".reviews__scrollbar",
+                el: '.reviews__scrollbar',
                 hide: false,
                 draggable: true,
             },
@@ -122,9 +123,9 @@ function initSliders() {
                 },
             },
             on: {},
-        });
-    if (document.querySelector(".partners__body"))
-        new Swiper(".partners__body", {
+        })
+    if (document.querySelector('.partners__body'))
+        new Swiper('.partners__body', {
             modules: [Scrollbar, Autoplay],
             observer: true,
             observeParents: true,
@@ -139,7 +140,7 @@ function initSliders() {
                 pauseOnMouseEnter: true,
             },
             scrollbar: {
-                el: ".partners__scrollbar",
+                el: '.partners__scrollbar',
                 hide: false,
                 draggable: true,
             },
@@ -162,10 +163,10 @@ function initSliders() {
                 },
             },
             on: {},
-        });
-    if (document.querySelector(".sliders-cart")) {
-        let subslider = new Swiper(".subslider-cart", {
-            modules: [Thumb],
+        })
+    if (document.querySelector('.sliders-cart')) {
+        let subslider = new Swiper('.subslider-cart', {
+            modules: [Thumbs],
             observer: true,
             observeParents: true,
             slidesPerView: 4,
@@ -182,9 +183,9 @@ function initSliders() {
                     slidesPerView: 4,
                 },
             },
-        });
-        new Swiper(".sliders-cart__main", {
-            modules: [Thumb],
+        })
+        new Swiper('.sliders-cart__main', {
+            modules: [Thumbs],
             observer: true,
             observeParents: true,
             slidesPerView: 1,
@@ -192,41 +193,41 @@ function initSliders() {
             thumbs: {
                 swiper: subslider,
             },
-        });
+        })
     }
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {
-	let sliderScrollItems = document.querySelectorAll('.swiper_scroll');
-	if (sliderScrollItems.length > 0) {
-		for (let index = 0; index < sliderScrollItems.length; index++) {
-			const sliderScrollItem = sliderScrollItems[index];
-			const sliderScrollBar = sliderScrollItem.querySelector('.swiper-scrollbar');
-			const sliderScroll = new Swiper(sliderScrollItem, {
-				observer: true,
-				observeParents: true,
-				direction: 'vertical',
-				slidesPerView: 'auto',
-				freeMode: {
-					enabled: true,
-				},
-				scrollbar: {
-					el: sliderScrollBar,
-					draggable: true,
-					snapOnRelease: false
-				},
-				mousewheel: {
-					releaseOnEdges: true,
-				},
-			});
-			sliderScroll.scrollbar.updateSize();
-		}
-	}
+    let sliderScrollItems = document.querySelectorAll('.swiper_scroll')
+    if (sliderScrollItems.length > 0) {
+        for (let index = 0; index < sliderScrollItems.length; index++) {
+            const sliderScrollItem = sliderScrollItems[index]
+            const sliderScrollBar = sliderScrollItem.querySelector('.swiper-scrollbar')
+            const sliderScroll = new Swiper(sliderScrollItem, {
+                observer: true,
+                observeParents: true,
+                direction: 'vertical',
+                slidesPerView: 'auto',
+                freeMode: {
+                    enabled: true,
+                },
+                scrollbar: {
+                    el: sliderScrollBar,
+                    draggable: true,
+                    snapOnRelease: false,
+                },
+                mousewheel: {
+                    releaseOnEdges: true,
+                },
+            })
+            sliderScroll.scrollbar.updateSize()
+        }
+    }
 }
 
-window.addEventListener("load", function (e) {
-	// Запуск ініціалізації слайдерів
-	initSliders();
-	// Запуск ініціалізації скролла на базі слайдера (за класом swiper_scroll)
-	//initSlidersScroll();
-});
+window.addEventListener('load', function (e) {
+    // Запуск ініціалізації слайдерів
+    initSliders()
+    // Запуск ініціалізації скролла на базі слайдера (за класом swiper_scroll)
+    //initSlidersScroll();
+})
