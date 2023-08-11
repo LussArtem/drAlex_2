@@ -1,0 +1,132 @@
+.printing__body {
+    border-bottom: 1px solid var(--inverse);
+}
+
+.header-printing {
+    display: flex;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header-printing__nav {
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.header-printing__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    column-gap: 13px;
+}
+
+.header-printing__list li {
+    white-space: nowrap;
+}
+
+.header-printing__list li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 41px;
+    border-radius: 100px;
+    border: 1px solid var(--inverse);
+    font-size: 12px;
+    line-height: 1.4166666667;
+    font-family: stolzl_regular;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    transition: all 0.3s ease 0s;
+}
+
+.header-printing__list ._tab-active a {
+    background-color: var(--accent);
+    border: 1px solid var(--accent);
+    color: #000;
+}
+
+.block-printing__wrapper {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.block-printing__img {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    left: 30%;
+    visibility: hidden;
+
+    transition: all 0.5s ease 0s;
+    width: 220px;
+    height: auto;
+}
+
+.block-printing__img::after {
+    content: "";
+    display: block;
+
+    transform: translateX(50%);
+    background: url("../img/eye-icon.svg") right no-repeat;
+    width: 45px;
+    height: 45px;
+}
+
+.block-printing__list {
+    position: relative;
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    z-index: 2;
+}
+
+.block-printing__list li {
+    border: 1px solid var(--inverse);
+}
+
+.block-printing__list li a {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    align-items: center;
+    line-height: 1.8333333333;
+    color: #d3d3d3;
+    text-transform: uppercase;
+    padding-right: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+
+    transition: all 0.4s ease 0s;
+}
+
+.block-printing__list li a::after {
+    content: "";
+    background: url("../img/icon/arrow-left.svg") right no-repeat;
+    position: absolute;
+    width: 67px;
+    height: 26px;
+    right: 10%;
+
+    transition: all 0.4s ease 0s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.block-printing__more {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    padding: 5px 33px;
+}

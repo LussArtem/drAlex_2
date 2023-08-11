@@ -1,0 +1,39 @@
+// Заголовки, загальні БЕМ блоки та інше...
+#follower {
+    position: fixed;
+    pointer-events: none;
+    width: 24px;
+    height: 24px;
+    background-image: url("../img/cursor.svg");
+    background-size: cover;
+    z-index: 9999;
+}
+
+#eye {
+    position: fixed;
+    pointer-events: none;
+    min-width: 47px;
+    height: 47px;
+    background-image: url("../img/eye-icon.svg");
+    background-size: cover;
+    z-index: 9999;
+    display: none;
+}
+
+.plus::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.color {
+    color: var(--inverse);
+}
+
+.img-1::before {
+    color: var(--inverse);
+    position: relative;
+    transform: translateY(-150%);
+    margin: 0 10px;
+}

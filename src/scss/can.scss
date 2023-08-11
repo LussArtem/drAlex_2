@@ -1,0 +1,79 @@
+.can__txt {
+    animation: leftText 30s linear infinite;
+}
+
+.can__body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    z-index: 2;
+}
+
+.can__column {
+    border: 1px solid var(--secondary);
+}
+
+.can__column li a {
+    display: block;
+    position: relative;
+    line-height: 1.25;
+    text-transform: uppercase;
+    transition: all 0.5s ease 0s;
+    word-wrap: break-word;
+    z-index: 2;
+}
+
+.can__column li a:not(:last-child) {
+    margin-bottom: 23px;
+}
+
+.can__img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease 0s;
+    transform: translateY(15%);
+    z-index: -1;
+}
+
+.can__img span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: rgba(20, 20, 20, 0.01);
+    border: 1px solid var(--inverse);
+    backdrop-filter: blur(10px);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(50%, 50%);
+}
+
+.can__img span img {
+    width: 220px;
+    height: auto;
+}
+
+.can__img span::before {
+    font-size: 10px;
+    position: relative;
+    z-index: 2;
+    color: var(--primary);
+}
+
+.can__img span::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--accent);
+}
