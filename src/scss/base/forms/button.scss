@@ -11,7 +11,7 @@
     transition: all 0.3s ease 0s;
     text-align: center;
     align-items: center;
-    &-white {
+    &-inverse {
         border: 1px solid var(--inverse);
         @media (any-hover: hover) {
             &:hover {
@@ -21,7 +21,7 @@
             }
         }
     }
-    &-yellow {
+    &-accent {
         background-color: var(--accent);
         border: 1px solid var(--accent);
         color: #000;
