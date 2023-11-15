@@ -1,0 +1,418 @@
+<!-- <!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Ошибка</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+<link rel="stylesheet" href="css/style.min.css?_v=20231115145525">
+<link rel="shortcut icon" href="favicon.ico">
+<!-- <meta name="robots" content="noindex, nofollow"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ночной клуб в вашем городе. Лучшие DJ, танцевальная музыка и атмосфера. Приходите и проведите незабываемую ночь!">
+<meta name="keywords" content="ночной клуб, клуб, музыка, танцы, вечеринка, диджей, развлечения, ночная жизнь">
+<meta name="author" content="vosmerok">
+
+<!-- Дополнительные мета-теги, которые можно использовать -->
+<meta name="robots" content="index, follow">
+<!-- Указывает поисковым роботам индексировать и следовать по ссылкам на сайте -->
+<meta name="revisit-after" content="7 days">
+<!-- Указывает поисковым роботам через какой промежуток времени возвращаться к индексации сайта -->
+
+
+
+
+<!-- Стили для прелоадера -->
+<style data-lp class="preloader-style">
+	.preloader {
+		pointer-events: none;
+		z-index: 1000;
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: linear-gradient(45deg, rgb(21, 19, 21) 10%, rgb(90, 43, 96) 100%);
+	}
+
+	.preloader * {
+		box-sizing: border-box;
+	}
+
+	.preloader__body {
+		padding: 0.93rem;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		width: 280px;
+		height: 280px;
+	}
+
+	.preloader__one,
+	.preloader__two {
+		position: absolute;
+		width: 175px;
+		height: 175px;
+		border-radius: 50%;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+	}
+
+	.preloader__one {
+		animation: spin1 2.3s infinite linear;
+	}
+
+	.preloader__two {
+		/* transform: rotate(45deg); */
+		animation: spin2 2.3s infinite linear;
+	}
+
+	.preloader__one_one,
+	.preloader__two_five {
+		border-top: 5px solid transparent;
+	}
+
+	.preloader__one_two,
+	.preloader__two_six {
+		border-right: 5px solid transparent;
+	}
+
+	.preloader__one_three,
+	.preloader__two_seven {
+		border-bottom: 5px solid transparent;
+	}
+
+	.preloader__one_four,
+	.preloader__two_eight {
+		border-left: 5px solid transparent;
+	}
+
+	.preloader__one_one {
+		top: -100px;
+	}
+
+	.preloader__one_two {
+		right: -100px;
+	}
+
+	.preloader__one_three {
+		bottom: -100px;
+	}
+
+	.preloader__one_four {
+		left: -100px;
+	}
+
+	.preloader__two_five {
+		right: -100px;
+		bottom: 100px;
+	}
+
+	.preloader__two_six {
+		left: 100px;
+		top: 100px;
+	}
+
+	.preloader__two_seven {
+		left: 100px;
+		top: 100px;
+	}
+
+	.preloader__two_eight {
+		right: 100px;
+		top: 100px;
+	}
+
+	@keyframes spin1 {
+		from {
+			transform: rotate(0deg);
+		}
+
+		to {
+			transform: rotate(360deg);
+		}
+
+		0% {
+			border-color: #968fa4;
+		}
+
+		50% {
+			border-color: #927aaa1d;
+		}
+
+		100% {
+			border-color: #817892;
+		}
+	}
+
+	@keyframes spin2 {
+		from {
+			transform: rotate(360deg);
+		}
+
+		to {
+			transform: rotate(0deg);
+		}
+
+		0% {
+			border-color: #321d5e;
+		}
+
+		50% {
+			border-color: #927aaa1d;
+		}
+
+		100% {
+			border-color: #442f6f;
+		}
+	}
+
+	.preloader__counter {
+		font-size: 35px;
+		position: absolute;
+		font-weight: 900;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: rgb(0, 0, 0);
+		z-index: 2222222;
+		font-family: sans-serif;
+	}
+
+	.preloader__line span {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 3px;
+		background-color: rgba(67, 9, 85, 0.516);
+		border-radius: 25px;
+		transition: width 0.3s ease 0s;
+	}
+
+
+	.lock body {
+		overflow: hidden;
+		touch-action: none;
+		overscroll-behavior: none;
+	}
+
+	.wrapper {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	.loading .preloader {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.loaded .preloader {
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.5s ease 0s;
+	}
+
+	.loaded .wrapper {
+		transition: opacity 0.5s ease 0s;
+		opacity: 1;
+		visibility: visible;
+	}
+</style>
+<!-- Скрипт прелоадера -->
+<script id="preloader">
+	(function() {
+		const preloaderContainer = document.querySelector('#preloader');
+		let preloader, preloaderBody, showPecentLoad, showLineLoad;
+		const htmlDocument = document.documentElement;
+		const settings = {
+			// Задержка перед удалением прелоадера из html после окончания загрузки
+			delayRemovePreloader: 500,
+			// Функционал процентного отображения
+			counter: true,
+			// Функционал процентного отображения загрузки
+			line: false,
+			// Функционал кастомного отображения разных элементов (можно редактировать) – для включения перевести init в позицию true.
+			custom: {
+				init: true,
+				// Элементы, которые нужно добавлять в preloader__body
+				body: `
+							<div class="preloader__one preloader__one_one"></div>
+							<div class="preloader__one preloader__one_two"></div>
+							<div class="preloader__one preloader__one_three"></div>
+							<div class="preloader__one preloader__one_four"></div>
+							<div class="preloader__two preloader__two_five"></div>
+							<div class="preloader__two preloader__two_six"></div>
+							<div class="preloader__two preloader__two_seven"></div>
+							<div class="preloader__two preloader__two_eight"></div>
+							`
+			},
+		};
+		const checkBodyinterval = setInterval(() => {
+			if (document.body) {
+				clearInterval(checkBodyinterval);
+				const preloaderTemplate = `
+								<div class="preloader">
+									<div class="preloader__body">
+										${settings.custom.init ? settings.custom.body : ''}
+										${settings.counter ? '<div class="preloader__counter">0%</div>' : ''}
+										${settings.line ? '<div class="preloader__line"><span></span></div>' : ''}
+									</div>
+								</div>
+							`;
+				htmlDocument.insertAdjacentHTML("beforeend", preloaderTemplate);
+				preloader = document.querySelector('.preloader');
+				preloaderBody = preloader.querySelector('.preloader__body');
+				showPecentLoad = document.querySelector('.preloader__counter');
+				showLineLoad = document.querySelector('.preloader__line span');
+			}
+		}, 10);
+		const checkScriptsInterval = setInterval(() => {
+			const mainScriptsTag = document.querySelector('[data-main-script]');
+			if (mainScriptsTag) {
+				clearInterval(checkScriptsInterval);
+				let preloaderImages = document.querySelectorAll('img');
+				const preloaderStyle = document.querySelector('.preloader-style');
+				if (preloaderImages.length) {
+					const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 40;
+					let imagesLoadedCount = counter = progress = 0;
+					htmlDocument.classList.add('loading');
+					htmlDocument.classList.add('lock');
+					window.addEventListener("load", () => htmlDocument.classList.add('download-done'));
+					preloaderImages.forEach(preloaderImage => {
+						const imgClone = document.createElement('img');
+						if (imgClone) {
+							imgClone.onload = imageLoaded;
+							imgClone.onerror = imageLoaded;
+							preloaderImage.dataset.src ? imgClone.src = preloaderImage.dataset.src : imgClone.src = preloaderImage.src;
+						}
+					});
+
+					function setValueProgress(progress) {
+						showPecentLoad ? showPecentLoad.innerText = `${progress}%` : null;
+						showLineLoad ? showLineLoad.style.width = `${progress}%` : null;
+					}
+					showPecentLoad ? setValueProgress(progress) : null;
+
+					function imageLoaded() {
+						imagesLoadedCount++;
+						progress = Math.round((100 / preloaderImages.length) * imagesLoadedCount);
+						const intervalId = setInterval(() => {
+							counter >= progress ? clearInterval(intervalId) : setValueProgress(++counter);
+							counter >= 100 ? addLoadedClass() : null;
+						}, intervalDelayCuonter);
+					}
+
+					function addLoadedClass() {
+						if (this.isRun == true) return;
+						this.isRun = true;
+
+						let timer = setInterval(() => {
+							if (htmlDocument.closest('.download-done')) {
+								htmlDocument.classList.remove('lock');
+								htmlDocument.classList.remove('loading');
+								setTimeout(() => {
+									htmlDocument.classList.remove('download-done');
+									htmlDocument.classList.add('loaded');
+								}, settings.delayRemovePreloader >= 500 ? settings.delayRemovePreloader - 500 : 0);
+								const intervalRemovePreloader = setInterval(() => {
+									preloader.remove();
+									if (preloaderStyle) {
+										preloaderStyle.remove();
+									}
+									clearInterval(intervalRemovePreloader);
+									clearInterval(timer);
+									preloaderContainer.remove();
+									mainScriptsTag.removeAttribute('data-main-script');
+								}, settings.delayRemovePreloader);
+							} else {
+								return;
+							}
+						}, 300);
+					}
+				} else {
+					if (preloaderStyle) {
+						preloaderStyle.remove();
+					}
+					preloaderContainer.remove();
+				}
+			}
+		}, 10);
+	})();
+</script>
+</head>
+
+<body>
+	<div class="wrapper hide">
+		<header class="header" data-lp>
+			<div class="header__container">
+				<div class="header__column">
+					<a data-da=".header__column-center, 768" href="/" class="header__logo"><img src="img/logo.svg" alt="Invite" /></a>
+					<a href="#" class="header__lang">Ru</a>
+					<a data-da=".header__menu, 650, 3" href="tel:+79210729957" class="header__phone button button-inverse">
+						+7 921 072 9957
+					</a>
+				</div>
+				<div class="header__column header__column-center">
+					<div data-da=".header__menu, 768, first" class="header__text">
+						это не просто музыка
+					</div>
+				</div>
+				<div class="header__column">
+					<ul data-da=".header__menu, 768, 1" class="header__social">
+						<li>
+							<a href="https://instagram.com/invvitted?igshid=YmMyMTA2M2Y=">
+								<svg width="17" height="17" viewBox="0 0 17 17" fill='white'>
+									<use xlink:href="img/icons/icons.svg#instagram"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="https://t.me/alexgubkiin">
+								<svg width="17" height="14" viewBox="0 0 17 14" fill='white'>
+									<use xlink:href="img/icons/icons.svg#telegram"></use>
+								</svg>
+							</a>
+						</li>
+						<li>
+							<a href="https://soundcloud.com/user-823574471/huntsman-mix-set-invite-birthday-080523">
+								<svg width="23" height="17" viewBox="0 0 23 17" fill='white'>
+									<use xlink:href="img/icons/icons.svg#soundcloud"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+					<button data-popup="#calculate" type="button" class="header__button header__button-desktop button button-accent">
+						Получить приглашение
+					</button>
+					<button type="button" class="header__burger">
+						<a class="menu__icon icon-menu"><span></span></a>
+					</button>
+				</div>
+				<div class="header__menu">
+					<button data-popup="#calculate" data-da=".header__menu, 650, last" type="button" class="header__button header__button-mobile button button-accent">
+						Получить Invite!
+					</button>
+				</div>
+			</div>
+		</header>
+	</div>
+	<script data-main-script src="js/app.min.js?_v=20231115145525"></script>
+	<main class="page">
+		<section data-fullscreen class="error-page">
+			<div class="error-page__items">
+				<h2 class="error-page__title">404</h2>
+				<h3 class="error-page__subtitle">Ой... Ошибка!</h3>
+				<p class="error-page__text">К сожалению, запрашиваемая Вами страница не найдена...</p>
+				<a href="index.html" class="error-page__button button">Главная</a>
+			</div>
+		</section>
+	</main>
+</body>
+
+</html> -->
