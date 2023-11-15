@@ -20,7 +20,7 @@
         "deployGH": "gh-pages -d dist",
         "bem": "fls-bemtree-from-html"
     },
-    "homepage": "https://lussartem.github.io/dist/",
+    "homepage": "https://lussartem.github.io/drAlex_2/",
     "devDependencies": {
         "@types/isotope-layout": "^3.0.9",
         "copy-webpack-plugin": "latest",
