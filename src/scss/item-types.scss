@@ -1,7 +1,7 @@
 .item-types {
     position: relative;
     border: 1px solid var(--inverse);
-    transition: all 0.5s ease 0s;
+    transition: transform 0.5s ease 0s;
     display: flex;
     flex-direction: column;
     min-height: 100%;
@@ -12,7 +12,7 @@
     line-height: 1.25;
     color: #d3d3d3;
     text-transform: uppercase;
-    transition: all 0.5s ease 0s;
+    transition: color 0.5s ease 0s;
     word-wrap: break-word;
 }
 

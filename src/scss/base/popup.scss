@@ -206,7 +206,7 @@ body::after {
         font-size: 12px;
         line-height: 1.4166666667;
         text-transform: uppercase;
-        transition: all 0.3s ease 0s;
+        transition: color 0.3s ease 0s, border-color 0.3s ease 0s, background-color 0.3s ease 0s;
         position: relative;
         & input {
             opacity: 0;
@@ -430,24 +430,13 @@ body::after {
 }
 
 //
-.section-title {
-    font-size: 48px;
-    line-height: 1.1041666667;
-    font-weight: 300;
-    text-transform: uppercase;
-    & span {
-        color: var(--accent);
-    }
-}
-
-//
 .page__text {
     display: flex;
     overflow: hidden;
     align-items: center;
     text-align: center;
     position: relative;
-    max-width: 2100px;
+    max-width: 2160px;
     margin-left: auto;
     margin-right: auto;
     &-item {
@@ -460,6 +449,24 @@ body::after {
         color: var(--primary);
         padding: 0 40px;
         animation: printText 40s linear infinite;
+    }
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 100px;
+        position: absolute;
+        top: 0;
+        z-index: 5;
+    }
+    &::before {
+        left: 0;
+        background-image: linear-gradient(to left, rgba(255, 255, 255, 0), var(--primary) 75%);
+    }
+    &::after {
+        right: 0;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0), var(--primary) 75%);
     }
 }
 

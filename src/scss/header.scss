@@ -12,7 +12,7 @@
         min-height: 138px;
         column-gap: 15px;
         &::after {
-            content: "";
+            content: '';
             position: fixed;
             width: 100%;
             height: 100%;
@@ -58,7 +58,7 @@
         text-align: center;
         // color: var(--accent);
         color: var(--text-accent);
-        transition: all 0.3s ease 0s;
+        transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
     }
 
     &__phone {
@@ -88,10 +88,10 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                transition: all 0.3s ease 0s;
+                transition: border-color 0.3s ease 0s, fill 0.3s ease 0s;
                 @media (any-hover: hover) {
-                    &:hover{
-                        border: 1px solid var(--accent);
+                    &:hover {
+                        border-color: var(--accent);
                         svg {
                             fill: var(--accent);
                             // path {

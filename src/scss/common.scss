@@ -4,7 +4,7 @@
     pointer-events: none;
     width: 24px;
     height: 24px;
-    background-image: url("../img/cursor.svg");
+    background-image: url('../img/cursor.svg');
     background-size: cover;
     z-index: 9999;
 }
@@ -14,7 +14,7 @@
     pointer-events: none;
     min-width: 47px;
     height: 47px;
-    background-image: url("../img/eye-icon.svg");
+    background-image: url('../img/eye-icon.svg');
     background-size: cover;
     z-index: 9999;
     display: none;
@@ -36,4 +36,30 @@
     position: relative;
     transform: translateY(-150%);
     margin: 0 10px;
+}
+
+// Форматирование параграфа
+.body-text {
+    p {
+        // margin-bottom: 50px;
+        // text-indent: 30px;
+        @include adaptiveValue('margin-bottom', 50, 20, 1440, 850);
+        @include adaptiveValue('text-indent', 30, 5, 1440, 850);
+    }
+
+    span {
+        color: var(--accent);
+    }
+}
+// TODO adaptive
+
+//
+.section-title {
+    font-size: 48px;
+    line-height: 1.1041666667;
+    font-weight: 300;
+    text-transform: uppercase;
+    & span {
+        color: var(--accent);
+    }
 }

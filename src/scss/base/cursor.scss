@@ -8,36 +8,37 @@
     left: 0;
     top: 0;
     pointer-events: none;
-    z-index: 1000;
-    // &__shadow {
-    //     will-change: transform;
-    //     transition: all 0.05s linear 0s;
-    //     position: fixed;
-    //     width: rem(50);
-    //     height: rem(50);
-    //     &::after {
-    //         content: '';
-    //         position: absolute;
-    //         width: 100%;
-    //         height: 100%;
-    //         top: 0;
-    //         left: 0;
-    //         border: 3px solid #000;
-    //         animation: rotate 5s infinite linear;
-    //         @keyframes rotate {
-    //             0% {
-    //                 transform: rotate(0deg);
-    //             }
-    //             100% {
-    //                 transform: rotate(-360deg);
-    //             }
-    //         }
-    //     }
-    // }
+    z-index: 10000;
+    &__shadow {
+        will-change: transform;
+        transition: all 0.05s linear 0s;
+        position: fixed;
+        width: rem(50);
+        height: rem(50);
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border: 3px solid var(--secondary);
+            border-radius: 50%;
+            // animation: rotate 5s infinite linear;
+            // @keyframes rotate {
+            //     0% {
+            //         transform: rotate(0deg);
+            //     }
+            //     100% {
+            //         transform: rotate(-360deg);
+            //     }
+            // }
+        }
+    }
     &__pointer {
         position: fixed;
-        width: rem(35);
-        height: rem(35);
+        width: rem(5);
+        height: rem(5);
         top: 0;
         left: 0;
         &::after {
@@ -55,16 +56,22 @@
     &._hover {
         .cursor__pointer::after {
             transform: scale(0.8);
+            border-color: var(--text-accent);
         }
         .cursor__shadow::after {
+            transform: scale(0.8);
+            border-color: var(--text-accent);
         }
     }
     &._active {
         .cursor__pointer::after {
             transition: all 0.05s ease 0s;
             transform: scale(0.3);
+            border-color: var(--secondary);
         }
         .cursor__shadow::after {
+            box-shadow: 0 0 5px 5px var(--secondary), 0 0 5px 5px var(--secondary) inset;
+            border: 0;
         }
     }
 }

@@ -1,4 +1,7 @@
 @media (min-width: 97.5em) {
+    .cart__print {
+        margin-bottom: 1rem;
+    }
     .input {
         min-height: 3.3125rem;
         padding-right: 1.25rem;
@@ -2162,7 +2165,7 @@
             margin-bottom: calc(2.5rem + 2.5 * (100vw - 20rem) / 77.5);
         }
     }
-
+    // printing scss 51--line
     @supports (padding-left: clamp(0.9375rem, 0.6471774194rem + 1.4516129032vw, 2.0625rem)) {
         .header-printing__list li a {
             padding-left: clamp(0.9375rem, 0.6471774194rem + 1.4516129032vw, 2.0625rem);
@@ -3410,6 +3413,9 @@
     .header__social li a:hover svg path {
         fill: var(--accent);
     }
+    .header__social li a:hover svg {
+        fill: var(--accent);
+    }
 
     .footer__location:hover {
         text-decoration: underline;
@@ -3426,18 +3432,21 @@
     .footer__link:hover svg path {
         fill: var(--accent);
     }
+    .footer__link:hover svg {
+        fill: var(--accent);
+    }
 
     .menu-footer__list li a:hover {
         color: var(--accent);
     }
 
     .block-printing__list li a:hover {
-        transform: translateX(40px);
+        transform: translate3D(10px, 0, 0);
         color: var(--accent);
     }
 
     .block-printing__list li a:hover::after {
-        right: 30%;
+        transform: translate3d(-40px, 0, 0);
         opacity: 1;
         visibility: visible;
     }

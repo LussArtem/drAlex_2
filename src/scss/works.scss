@@ -1,16 +1,16 @@
 .works {
-    @include adaptiveValue ("margin-bottom", 20, 97.5,5);
+    @include adaptiveValue('margin-bottom', 20, 97.5, 5);
     &__decor {
         position: absolute;
         z-index: -1;
     }
-    
+
     &__txt {
         animation: rightText 30s linear infinite;
     }
-    
+
     &__body {
-        @include adaptiveValue ("margin-top", 20, 97.5, 1);
+        @include adaptiveValue('margin-top', 20, 97.5, 1);
         position: relative;
         border-top: 1px solid var(--inverse);
         display: flex;
@@ -18,7 +18,7 @@
         -webkit-box-direction: normal;
         flex-direction: column;
     }
-    
+
     &__title {
         position: absolute;
         left: 50%;
@@ -31,23 +31,23 @@
         z-index: 3;
         text-transform: uppercase;
     }
-    
+
     &__title span {
         color: var(--accent);
     }
-    
+
     &__slide {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
     }
-    
+
     &__img {
         position: relative;
         width: 100%;
         padding-bottom: 100%;
     }
-    
+
     &__img img {
         position: absolute;
         width: 100%;
@@ -56,12 +56,12 @@
         left: 0;
         object-fit: cover;
     }
-    
+
     &__img-big {
         grid-column: span 2;
         grid-row: span 2;
     }
-    
+
     &__more {
         display: inline-flex;
         margin: 0 auto;
@@ -88,3 +88,6 @@
 .partners .swiper-autoheight .swiper-wrapper {
     align-items: center;
 }
+// .partners .swiper-wrapper {
+//     align-items: center;
+// }
