@@ -156,7 +156,7 @@ export let _slideToggle = (target, duration = 500) => {
         return _slideUp(target, duration)
     }
 }
-// Допоміжні модулі блокування прокручування та стрибка ====================================================================================================================================================================================================================================================================================
+// Вспомогательные модули блокировки прокрутки и прыжка ====================================================================================================================================================================================================================================================================================
 export let bodyLockStatus = true
 export let bodyLockToggle = (delay = 500) => {
     if (document.documentElement.classList.contains('lock')) {
@@ -626,7 +626,7 @@ export function rippleEffect() {
     })
 }
 // Модуль "Сustom сursor" =======================================================================================================================================================================================================================
-export function customCursor(isShadowTrue, isInterective) {
+export function customCursor(isShadowTrue) {
     const wrapper = document.querySelector('[data-custom-cursor]')
         ? document.querySelector('[data-custom-cursor]')
         : document.documentElement
@@ -665,9 +665,10 @@ export function customCursor(isShadowTrue, isInterective) {
             } else if (e.type === 'mousemove') {
                 cursor.style.removeProperty('opacity')
                 if (
-                    e.target.closest('button') ||
-                    e.target.closest('a') ||
+                    (e.target.closest('button') && !e.target.closest('._tab-active')) ||
+                    (e.target.closest('a') && !e.target.closest('._active')) ||
                     e.target.closest('input') ||
+                    e.target.closest('[data-gallery]') ||
                     (window.getComputedStyle(e.target).cursor !== 'none' && window.getComputedStyle(e.target).cursor !== 'default')
                 ) {
                     cursor.classList.add('_hover')
