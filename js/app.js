@@ -7219,7 +7219,12 @@ PERFORMANCE OF THIS SOFTWARE.
                     galleryClass: lightgallery_es5(gallery, {
                         plugins: [ lg_thumbnail_min, lg_video_min ],
                         licenseKey: "7EC452A9-0CFD441C-BD984C7C-17C8456E",
-                        speed: 500
+                        speed: 500,
+                        autoplay: false,
+                        videojs: true,
+                        videojsOptions: {
+                            muted: true
+                        }
                     })
                 });
             }));
