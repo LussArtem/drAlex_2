@@ -7220,14 +7220,12 @@ PERFORMANCE OF THIS SOFTWARE.
                         plugins: [ lg_thumbnail_min, lg_video_min ],
                         licenseKey: "7EC452A9-0CFD441C-BD984C7C-17C8456E",
                         speed: 500,
-                        autoplay: false,
-                        videojs: true,
-                        videojsOptions: {
-                            muted: true
-                        }
+                        autoplay: false
                     })
                 });
             }));
+            const masonryGallery = document.querySelector(".masonry__item--video");
+            console.log(masonryGallery);
             modules_flsModules.gallery = galleyItems;
         }
         const MasonryActiveClassName = "masonry__active";
