@@ -21,7 +21,7 @@
     }
 
     &__description {
-        border-bottom: 1px solid #d3d3d3;
+        border-bottom: 1px solid var(--secondary);
         margin-bottom: 23px;
     }
 
@@ -33,7 +33,7 @@
     &__label {
         line-height: 1.8333333333;
         text-transform: uppercase;
-        color: #d3d3d3;
+        color: var(--secondary);
     }
 
     &__caption {
@@ -48,7 +48,7 @@
         flex-wrap: wrap;
         padding-bottom: 20px;
         margin-bottom: 22px;
-        border-bottom: 1px solid #d3d3d3;
+        border-bottom: 1px solid var(--secondary);
     }
 
     &__list {
@@ -62,7 +62,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        border-bottom: 1px solid #d3d3d3;
+        border-bottom: 1px solid var(--secondary);
         gap: 15px;
 
         flex-wrap: wrap;
@@ -76,7 +76,7 @@
     }
 
     &__actions {
-        border-top: 1px solid #d3d3d3;
+        border-top: 1px solid var(--secondary);
     }
 
     & .swiper {
@@ -125,7 +125,7 @@
     gap: 15px;
 
     flex-wrap: wrap;
-    border-bottom: 1px solid #d3d3d3;
+    border-bottom: 1px solid var(--secondary);
     margin-bottom: 20px;
 }
 
@@ -170,7 +170,7 @@
 }
 
 .colors-cart__list li::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -231,7 +231,7 @@
 
     column-gap: 22px;
     line-height: 1.8333333333;
-    color: #d3d3d3;
+    color: var(--secondary);
     text-transform: uppercase;
 
     transition: all 0.3s ease 0s;

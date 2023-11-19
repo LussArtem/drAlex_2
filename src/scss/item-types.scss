@@ -10,7 +10,7 @@
 .item-types__title {
     font-weight: 300;
     line-height: 1.25;
-    color: #d3d3d3;
+    color: var(--secondary);
     text-transform: uppercase;
     transition: color 0.5s ease 0s;
     word-wrap: break-word;
