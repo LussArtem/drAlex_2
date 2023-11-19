@@ -92,3 +92,8 @@
         padding: 0 33px;
     }
 }
+.light {
+    .mainscreen__bg {
+        filter: invert(0.9);
+    }
+}

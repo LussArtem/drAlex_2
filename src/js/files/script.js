@@ -21,3 +21,15 @@ import { flsModules } from './modules.js'
 //     //
 //     // }
 // }
+
+// Смена цветовой темы
+// константы
+const root = document.querySelector(':root')
+const toggleColorTheme = document.querySelector('#toggleColorTheme')
+
+// функция
+toggleColorTheme.addEventListener('click', () => {
+    event.preventDefault()
+    root.classList.toggle('light')
+    // TODO: function change ICON or Pictrure
+})
