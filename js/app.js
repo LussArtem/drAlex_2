@@ -7224,8 +7224,6 @@ PERFORMANCE OF THIS SOFTWARE.
                     })
                 });
             }));
-            const masonryGallery = document.querySelector(".masonry__item--video");
-            console.log(masonryGallery);
             modules_flsModules.gallery = galleyItems;
         }
         const MasonryActiveClassName = "masonry__active";
@@ -7397,6 +7395,16 @@ PERFORMANCE OF THIS SOFTWARE.
         }
         const da = new DynamicAdapt("max");
         da.init();
+        const root = document.querySelector(":root");
+        const toggleColorTheme = document.querySelector("#toggleColorTheme");
+        const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+        const currentTheme = localStorage.getItem("theme");
+        toggleColorTheme.addEventListener("click", (e => {
+            e.preventDefault();
+            root.classList.toggle("light");
+            if (Array.from(root.classList).includes("light")) localStorage.setItem("theme", "light"); else localStorage.setItem("theme", "dark");
+        }));
+        if (currentTheme === "light" || !prefersDarkScheme.matches) root.classList.add("light"); else root.classList.remove("light");
         window["FLS"] = false;
         isWebp();
         addTouchClass();
