@@ -26,10 +26,22 @@ import { flsModules } from './modules.js'
 // константы
 const root = document.querySelector(':root')
 const toggleColorTheme = document.querySelector('#toggleColorTheme')
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)')
+const currentTheme = localStorage.getItem('theme')
 
-// функция
-toggleColorTheme.addEventListener('click', () => {
-    event.preventDefault()
+// функция смены темы
+toggleColorTheme.addEventListener('click', (e) => {
+    e.preventDefault()
     root.classList.toggle('light')
-    // TODO: function change ICON or Pictrure
+    if (Array.from(root.classList).includes('light')) {
+        localStorage.setItem('theme', 'light')
+    } else {
+        localStorage.setItem('theme', 'dark')
+    }
 })
+// проверка темы в локале или в настройках темы
+if (currentTheme === 'light' || !prefersDarkScheme.matches) {
+    root.classList.add('light')
+} else {
+    root.classList.remove('light')
+}
