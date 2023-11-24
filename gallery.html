@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231124174730">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231124175257">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -283,7 +283,7 @@
 
 		.loaded .preloader__one {
 			transform: translateX(-100%);
-			border-right: 50px solid #da1010;
+			border-right: 1px solid #ffffff;
 		}
 
 
@@ -310,14 +310,14 @@
 			height: 0%;
 			background-color: white;
 			z-index: 500000;
-			opacity: 0;
+			opacity: 1;
 
 
 			transition: height 1s;
 		}
 
-		.download-done .preloader__line span {
-			opacity: 1;
+		.loaded .preloader__line span {
+			opacity: 0;
 		}
 
 		/* .preload-animation .preloader__line span {
@@ -931,7 +931,7 @@
 			</div>
 		</div>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231124174730"></script>
+	<script data-main-script src="js/app.min.js?_v=20231124175257"></script>
 </body>
 
 </html>
