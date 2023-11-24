@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231124165126">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231124174730">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -268,24 +268,23 @@
 
 		.preloader__one {
 			left: 0;
-			border-right: 1px solid #ffffff;
+
 		}
 
 		.preloader__two {
 			left: 50%;
+
+		}
+
+		.loaded .preloader__two {
+			transform: translateX(100%);
 			border-left: 1px solid #ffffff;
 		}
 
-		.preload-animation .preloader__two {
-			transform: translateX(100%);
-		}
-
-		.preload-animation .preloader__one {
+		.loaded .preloader__one {
 			transform: translateX(-100%);
+			border-right: 50px solid #da1010;
 		}
-
-
-
 
 
 
@@ -296,7 +295,7 @@
 			left: 50%;
 			bottom: 0;
 			font-family: sans-serif;
-			transition: bottom .4s;
+			transition: bottom 1s;
 
 			font-weight: 900;
 			font-size: 35px;
@@ -310,14 +309,20 @@
 			width: 1px;
 			height: 0%;
 			background-color: white;
+			z-index: 500000;
+			opacity: 0;
 
 
 			transition: height 1s;
 		}
 
 		.download-done .preloader__line span {
-			opacity: 0;
+			opacity: 1;
 		}
+
+		/* .preload-animation .preloader__line span {
+			opacity: 1;
+		} */
 
 		.lock body {
 			overflow: hidden;
@@ -341,7 +346,7 @@
 			 transition: all 0.5s ease 0s; 
 		} */
 
-		.download-done .wrapper {
+		.loaded .wrapper {
 			transition: opacity 0.5s ease 0s;
 			opacity: 1;
 			visibility: visible;
@@ -353,12 +358,13 @@
 	<!-- Скрипт прелоадера -->
 	<script id="preloader">
 		(function() {
+
 			const preloaderContainer = document.querySelector('#preloader');
 			let preloader, preloaderBody, showPecentLoad, showLineLoad;
 			const htmlDocument = document.documentElement;
 			const settings = {
 				// Задержка перед удалением прелоадера из html после окончания загрузки
-				delayRemovePreloader: 1500,
+				delayRemovePreloader: 1000,
 				// Функционал процентного отображения
 				counter: true,
 				// Функционал процентного отображения загрузки
@@ -367,11 +373,8 @@
 				custom: {
 					init: true,
 					// Элементы, которые нужно добавлять в preloader__body
-					body: `
-							<div class="preloader__one "></div>
-							<div class="preloader__two "></div>
-							
-							`
+					body: `<div class="preloader__one "></div>
+							<div class="preloader__two "></div>`
 				},
 			};
 			const checkBodyinterval = setInterval(() => {
@@ -400,11 +403,8 @@
 					let preloaderImages = document.querySelectorAll('img');
 					let preloaderVideo = document.querySelectorAll('video');
 					const preloaderStyle = document.querySelector('.preloader-style');
-					// console.log(preloaderImages.length, 'length');
-					// console.log(preloaderVideo.length, 'video');
 					if (preloaderImages.length) {
-						const intervalDelayCuonter = 4 * preloaderImages.length > 40 ? 4 * preloaderImages.length : 40;
-						console.log(intervalDelayCuonter, 'count');
+						const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 40;
 						let imagesLoadedCount = counter = progress = 0;
 						htmlDocument.classList.add('loading');
 						htmlDocument.classList.add('lock');
@@ -415,8 +415,6 @@
 								imgClone.onload = imageLoaded;
 								imgClone.onerror = imageLoaded;
 								preloaderImage.dataset.src ? imgClone.src = preloaderImage.dataset.src : imgClone.src = preloaderImage.src;
-								console.log(preloaderImage.src, 'src');
-								console.log(preloaderImage.dataset.src, 'datasrc');
 							}
 						});
 
@@ -428,14 +426,13 @@
 						}
 						showPecentLoad ? setValueProgress(progress) : null;
 
+
 						function imageLoaded() {
 							imagesLoadedCount++;
 							progress = Math.round((100 / preloaderImages.length) * imagesLoadedCount);
-							// console.log(progress, "progress");//**
 							const intervalId = setInterval(() => {
 								counter >= progress ? clearInterval(intervalId) : setValueProgress(++counter);
 								counter >= 100 ? addLoadedClass() : null;
-								// console.log(counter, "counter");
 							}, intervalDelayCuonter);
 						}
 
@@ -449,7 +446,7 @@
 									htmlDocument.classList.remove('loading');
 									htmlDocument.classList.add('preload-animation');
 									setTimeout(() => {
-										// htmlDocument.classList.remove('download-done');
+										htmlDocument.classList.remove('download-done');
 										htmlDocument.classList.add('loaded');
 									}, settings.delayRemovePreloader >= 500 ? settings.delayRemovePreloader - 500 : 0);
 									const intervalRemovePreloader = setInterval(() => {
@@ -934,7 +931,7 @@
 			</div>
 		</div>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231124165126"></script>
+	<script data-main-script src="js/app.min.js?_v=20231124174730"></script>
 </body>
 
 </html>
