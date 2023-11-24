@@ -1092,6 +1092,7 @@
                     } else if (e.type === "mousedown") cursor.classList.add("_active"); else if (e.type === "mouseup") cursor.classList.remove("_active");
                     cursorPointer ? cursorPointer.style.transform = `translate3d(${e.clientX - cursorPointerStyle.width / 2}px, ${e.clientY - cursorPointerStyle.height / 2}px, 0)` : null;
                     cursorShadow ? cursorShadow.style.transform = `translate3d(${e.clientX - cursorShadowStyle.width / 2}px, ${e.clientY - cursorShadowStyle.height / 2}px, 0)` : null;
+                    requestAnimationFrame(mouseActions);
                 }
                 window.addEventListener("mouseup", mouseActions);
                 window.addEventListener("mousedown", mouseActions);
@@ -7401,10 +7402,35 @@ PERFORMANCE OF THIS SOFTWARE.
         const currentTheme = localStorage.getItem("theme");
         toggleColorTheme.addEventListener("click", (e => {
             e.preventDefault();
+            console.log(e.target.className);
+            console.log(e.target);
+            mixSpan();
             root.classList.toggle("light");
             if (Array.from(root.classList).includes("light")) localStorage.setItem("theme", "light"); else localStorage.setItem("theme", "dark");
         }));
-        if (currentTheme === "light" || !prefersDarkScheme.matches) root.classList.add("light"); else root.classList.remove("light");
+        if (currentTheme === "light" || !prefersDarkScheme.matches) {
+            root.classList.add("light");
+            createIcon(`sun`, "night");
+        } else {
+            root.classList.remove("light");
+            createIcon(`night`, "sun");
+        }
+        function createIcon(theme, theme2) {
+            toggleColorTheme.insertAdjacentHTML("beforeend", `<span class="_icon-${theme}"></span>\n    <span class="_icon-${theme2}"></span>`);
+        }
+        console.log(toggleColorTheme.children);
+        function mixSpan() {
+            let A = Array.from(toggleColorTheme.children);
+            console.log(A[0].className);
+        }
+        function mouseEnter(e) {
+            console.log(e.type);
+            if (e.type == "mouseenter") e.target.classList.add("hover"); else toggleColorTheme.classList.toggle("dada");
+            e.target.classList.toggle("hover");
+        }
+        toggleColorTheme.addEventListener("mouseenter", mouseEnter);
+        toggleColorTheme.addEventListener("mouseleave", mouseEnter);
+        toggleColorTheme.addEventListener("click", mouseEnter);
         window["FLS"] = false;
         isWebp();
         addTouchClass();

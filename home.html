@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231119235016">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231124165126">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@
 
 
 	<!-- Стили для прелоадера -->
-	<style data-lp class="preloader-style">
+	<!-- <style data-lp class="preloader-style">
 		.preloader {
 			pointer-events: none;
 			z-index: 1000;
@@ -224,7 +224,132 @@
 			opacity: 1;
 			visibility: visible;
 		}
+	</style> -->
+
+
+	<style data-lp class="preloader-style">
+		.preloader {
+			pointer-events: none;
+			z-index: 1000;
+			position: fixed;
+			width: 100vw;
+			height: 100vh;
+			top: 0;
+			left: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #e0dddd1e;
+			/* background: linear-gradient(45deg, rgb(21, 19, 21) 10%, rgb(90, 43, 96) 100%); */
+		}
+
+		.preloader * {
+			box-sizing: border-box;
+		}
+
+		.preloader__body {
+			/* padding: 0.93rem;
+			display: flex;
+			flex-direction: column;
+			position: relative;
+			width: 280px;
+			height: 280px; */
+		}
+
+		.preloader__one,
+		.preloader__two {
+			position: absolute;
+			width: 50%;
+			height: 100%;
+			top: 0;
+			background-color: #161616;
+			transition: transform 0.5s;
+		}
+
+		.preloader__one {
+			left: 0;
+			border-right: 1px solid #ffffff;
+		}
+
+		.preloader__two {
+			left: 50%;
+			border-left: 1px solid #ffffff;
+		}
+
+		.preload-animation .preloader__two {
+			transform: translateX(100%);
+		}
+
+		.preload-animation .preloader__one {
+			transform: translateX(-100%);
+		}
+
+
+
+
+
+
+		.preloader__counter {
+			position: absolute;
+			color: #ffffff;
+			padding-top: 100%;
+			left: 50%;
+			bottom: 0;
+			font-family: sans-serif;
+			transition: bottom .4s;
+
+			font-weight: 900;
+			font-size: 35px;
+		}
+
+		.preloader__line span {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 1px;
+			height: 0%;
+			background-color: white;
+
+
+			transition: height 1s;
+		}
+
+		.download-done .preloader__line span {
+			opacity: 0;
+		}
+
+		.lock body {
+			overflow: hidden;
+			touch-action: none;
+			overscroll-behavior: none;
+		}
+
+		.wrapper {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		/* .loading .preloader {
+			opacity: 1;
+			visibility: visible;
+		} */
+
+		/* .download-done .preloader {
+			opacity: 0;
+			visibility: hidden;
+			 transition: all 0.5s ease 0s; 
+		} */
+
+		.download-done .wrapper {
+			transition: opacity 0.5s ease 0s;
+			opacity: 1;
+			visibility: visible;
+		}
 	</style>
+
+
+
 	<!-- Скрипт прелоадера -->
 	<script id="preloader">
 		(function() {
@@ -233,24 +358,19 @@
 			const htmlDocument = document.documentElement;
 			const settings = {
 				// Задержка перед удалением прелоадера из html после окончания загрузки
-				delayRemovePreloader: 500,
+				delayRemovePreloader: 1500,
 				// Функционал процентного отображения
 				counter: true,
 				// Функционал процентного отображения загрузки
-				line: false,
+				line: true,
 				// Функционал кастомного отображения разных элементов (можно редактировать) – для включения перевести init в позицию true.
 				custom: {
 					init: true,
 					// Элементы, которые нужно добавлять в preloader__body
 					body: `
-							<div class="preloader__one preloader__one_one"></div>
-							<div class="preloader__one preloader__one_two"></div>
-							<div class="preloader__one preloader__one_three"></div>
-							<div class="preloader__one preloader__one_four"></div>
-							<div class="preloader__two preloader__two_five"></div>
-							<div class="preloader__two preloader__two_six"></div>
-							<div class="preloader__two preloader__two_seven"></div>
-							<div class="preloader__two preloader__two_eight"></div>
+							<div class="preloader__one "></div>
+							<div class="preloader__two "></div>
+							
 							`
 				},
 			};
@@ -278,9 +398,13 @@
 				if (mainScriptsTag) {
 					clearInterval(checkScriptsInterval);
 					let preloaderImages = document.querySelectorAll('img');
+					let preloaderVideo = document.querySelectorAll('video');
 					const preloaderStyle = document.querySelector('.preloader-style');
+					// console.log(preloaderImages.length, 'length');
+					// console.log(preloaderVideo.length, 'video');
 					if (preloaderImages.length) {
-						const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 40;
+						const intervalDelayCuonter = 4 * preloaderImages.length > 40 ? 4 * preloaderImages.length : 40;
+						console.log(intervalDelayCuonter, 'count');
 						let imagesLoadedCount = counter = progress = 0;
 						htmlDocument.classList.add('loading');
 						htmlDocument.classList.add('lock');
@@ -291,21 +415,27 @@
 								imgClone.onload = imageLoaded;
 								imgClone.onerror = imageLoaded;
 								preloaderImage.dataset.src ? imgClone.src = preloaderImage.dataset.src : imgClone.src = preloaderImage.src;
+								console.log(preloaderImage.src, 'src');
+								console.log(preloaderImage.dataset.src, 'datasrc');
 							}
 						});
 
+
 						function setValueProgress(progress) {
 							showPecentLoad ? showPecentLoad.innerText = `${progress}%` : null;
-							showLineLoad ? showLineLoad.style.width = `${progress}%` : null;
+							showPecentLoad ? showPecentLoad.style.bottom = `${progress}%` : null;
+							showLineLoad ? showLineLoad.style.height = `${progress}%` : null;
 						}
 						showPecentLoad ? setValueProgress(progress) : null;
 
 						function imageLoaded() {
 							imagesLoadedCount++;
 							progress = Math.round((100 / preloaderImages.length) * imagesLoadedCount);
+							// console.log(progress, "progress");//**
 							const intervalId = setInterval(() => {
 								counter >= progress ? clearInterval(intervalId) : setValueProgress(++counter);
 								counter >= 100 ? addLoadedClass() : null;
+								// console.log(counter, "counter");
 							}, intervalDelayCuonter);
 						}
 
@@ -317,11 +447,13 @@
 								if (htmlDocument.closest('.download-done')) {
 									htmlDocument.classList.remove('lock');
 									htmlDocument.classList.remove('loading');
+									htmlDocument.classList.add('preload-animation');
 									setTimeout(() => {
-										htmlDocument.classList.remove('download-done');
+										// htmlDocument.classList.remove('download-done');
 										htmlDocument.classList.add('loaded');
 									}, settings.delayRemovePreloader >= 500 ? settings.delayRemovePreloader - 500 : 0);
 									const intervalRemovePreloader = setInterval(() => {
+										htmlDocument.classList.remove('preload-animation');
 										preloader.remove();
 										if (preloaderStyle) {
 											preloaderStyle.remove();
@@ -355,7 +487,8 @@
 			<div class="header__container">
 				<div class="header__column">
 					<a data-da=".header__column-center, 768" href="/" class="header__logo"><img src="img/logo.svg" alt="Invite" /></a>
-					<button id="toggleColorTheme" class="header__lang">Ru</button>
+					<!-- TODO PICTURE Theme -->
+					<button id="toggleColorTheme" class="header__toggle-color"></button>
 					<a data-da=".header__menu, 650, 3" href="tel:+79210729957" class="header__phone button button-inverse">
 						+7 921 072 9957
 					</a>
@@ -1391,7 +1524,7 @@
 			</div>
 		</div>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231119235016"></script>
+	<script data-main-script src="js/app.min.js?_v=20231124165126"></script>
 </body>
 
 </html>
