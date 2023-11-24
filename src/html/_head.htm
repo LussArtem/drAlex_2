@@ -318,7 +318,7 @@
 			opacity: 0;
 		}
 
-		.download-done .preloader__counter {
+		.loaded .preloader__counter {
 			opacity: 0;
 		}
 
@@ -360,13 +360,12 @@
 	<!-- Скрипт прелоадера -->
 	<script id="preloader">
 		(function () {
-
 			const preloaderContainer = document.querySelector('#preloader');
 			let preloader, preloaderBody, showPecentLoad, showLineLoad;
 			const htmlDocument = document.documentElement;
 			const settings = {
 				// Задержка перед удалением прелоадера из html после окончания загрузки
-				delayRemovePreloader: 1000,
+				delayRemovePreloader: 1500,
 				// Функционал процентного отображения
 				counter: true,
 				// Функционал процентного отображения загрузки
@@ -402,8 +401,8 @@
 				const mainScriptsTag = document.querySelector('[data-main-script]');
 				if (mainScriptsTag) {
 					clearInterval(checkScriptsInterval);
-					let preloaderImages = document.querySelectorAll('img');
-					let preloaderVideo = document.querySelectorAll('video');
+					let preloaderImages = document.querySelectorAll('img, video');
+					console.log(preloaderImages);
 					const preloaderStyle = document.querySelector('.preloader-style');
 					if (preloaderImages.length) {
 						const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 40;
