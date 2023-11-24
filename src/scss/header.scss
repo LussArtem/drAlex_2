@@ -44,21 +44,41 @@
         height: auto;
     }
 
-    &__lang {
+    &__toggle-color {
         min-width: 42px;
         height: 42px;
         border-radius: 50%;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+        clip-path: border-box;
         // border: 1px solid var(--accent);
         border: 1px solid var(--text-accent);
-        font-size: 12px;
+        font-size: $fontSize;
         font-family: stolzl_regular;
         text-align: center;
         // color: var(--accent);
         color: var(--text-accent);
-        transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
+        transition: border-color 0.3s ease 0s, color 0.3s ease 0s, transform 0.3s ease 0s;
+        &:hover span {
+            // transform: translateY(-4px);
+        }
+        span {
+            transform: translateY(16px);
+            transition: transform 0.3s ease 0s;
+
+            // &::after {
+            //     padding-top: 10px;
+            // }
+            &:nth-last-child(1) {
+                padding-top: 6px;
+            }
+        }
+        &.hover span {
+            transform: translateY(-4px);
+            transition: transform 0.3s ease 0s;
+        }
     }
 
     &__phone {

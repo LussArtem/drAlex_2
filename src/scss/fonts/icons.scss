@@ -9,6 +9,18 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+[class*='_icon-']:after {
+    display: block;
+    font-family: 'icons';
+    font-style: normal;
+
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 //
 
@@ -51,7 +63,7 @@
 ._icon-mail:before {
     content: '\e902';
 }
-._icon-sun:before {
+._icon-sun:after {
     content: '\e903';
 }
 ._icon-mixer:before {

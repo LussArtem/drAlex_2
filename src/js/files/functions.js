@@ -690,6 +690,7 @@ export function customCursor(isShadowTrue) {
                       e.clientY - cursorShadowStyle.height / 2
                   }px, 0)`)
                 : null
+            requestAnimationFrame(mouseActions)
         }
 
         window.addEventListener('mouseup', mouseActions)
