@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231124182959">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231124220410">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,208 +24,6 @@
 
 
 	<!-- Стили для прелоадера -->
-	<!-- <style data-lp class="preloader-style">
-		.preloader {
-			pointer-events: none;
-			z-index: 1000;
-			position: fixed;
-			width: 100vw;
-			height: 100vh;
-			top: 0;
-			left: 0;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background: linear-gradient(45deg, rgb(21, 19, 21) 10%, rgb(90, 43, 96) 100%);
-		}
-
-		.preloader * {
-			box-sizing: border-box;
-		}
-
-		.preloader__body {
-			padding: 0.93rem;
-			display: flex;
-			flex-direction: column;
-			position: relative;
-			width: 280px;
-			height: 280px;
-		}
-
-		.preloader__one,
-		.preloader__two {
-			position: absolute;
-			width: 175px;
-			height: 175px;
-			border-radius: 50%;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			margin: auto;
-		}
-
-		.preloader__one {
-			animation: spin1 2.3s infinite linear;
-		}
-
-		.preloader__two {
-			/* transform: rotate(45deg); */
-			animation: spin2 2.3s infinite linear;
-		}
-
-		.preloader__one_one,
-		.preloader__two_five {
-			border-top: 5px solid transparent;
-		}
-
-		.preloader__one_two,
-		.preloader__two_six {
-			border-right: 5px solid transparent;
-		}
-
-		.preloader__one_three,
-		.preloader__two_seven {
-			border-bottom: 5px solid transparent;
-		}
-
-		.preloader__one_four,
-		.preloader__two_eight {
-			border-left: 5px solid transparent;
-		}
-
-		.preloader__one_one {
-			top: -100px;
-		}
-
-		.preloader__one_two {
-			right: -100px;
-		}
-
-		.preloader__one_three {
-			bottom: -100px;
-		}
-
-		.preloader__one_four {
-			left: -100px;
-		}
-
-		.preloader__two_five {
-			right: -100px;
-			bottom: 100px;
-		}
-
-		.preloader__two_six {
-			left: 100px;
-			top: 100px;
-		}
-
-		.preloader__two_seven {
-			left: 100px;
-			top: 100px;
-		}
-
-		.preloader__two_eight {
-			right: 100px;
-			top: 100px;
-		}
-
-		@keyframes spin1 {
-			from {
-				transform: rotate(0deg);
-			}
-
-			to {
-				transform: rotate(360deg);
-			}
-
-			0% {
-				border-color: #968fa4;
-			}
-
-			50% {
-				border-color: #927aaa1d;
-			}
-
-			100% {
-				border-color: #817892;
-			}
-		}
-
-		@keyframes spin2 {
-			from {
-				transform: rotate(360deg);
-			}
-
-			to {
-				transform: rotate(0deg);
-			}
-
-			0% {
-				border-color: #321d5e;
-			}
-
-			50% {
-				border-color: #927aaa1d;
-			}
-
-			100% {
-				border-color: #442f6f;
-			}
-		}
-
-		.preloader__counter {
-			font-size: 35px;
-			position: absolute;
-			font-weight: 900;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			color: rgb(0, 0, 0);
-			z-index: 2222222;
-			font-family: sans-serif;
-		}
-
-		.preloader__line span {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			height: 3px;
-			background-color: rgba(67, 9, 85, 0.516);
-			border-radius: 25px;
-			transition: width 0.3s ease 0s;
-		}
-
-
-		.lock body {
-			overflow: hidden;
-			touch-action: none;
-			overscroll-behavior: none;
-		}
-
-		.wrapper {
-			opacity: 0;
-			visibility: hidden;
-		}
-
-		.loading .preloader {
-			opacity: 1;
-			visibility: visible;
-		}
-
-		.loaded .preloader {
-			opacity: 0;
-			visibility: hidden;
-			transition: all 0.5s ease 0s;
-		}
-
-		.loaded .wrapper {
-			transition: opacity 0.5s ease 0s;
-			opacity: 1;
-			visibility: visible;
-		}
-	</style> -->
-
 
 	<style data-lp class="preloader-style">
 		.preloader {
@@ -263,7 +61,9 @@
 			height: 100%;
 			top: 0;
 			background-color: #161616;
-			transition: transform 0.5s;
+			transition: transform 0.55s;
+			background-image: url(img/2.gif);
+			background-blend-mode: multiply;
 		}
 
 		.preloader__one {
@@ -279,6 +79,7 @@
 		.loaded .preloader__two {
 			transform: translateX(100%);
 			border-left: 1px solid #ffffff;
+
 		}
 
 		.loaded .preloader__one {
@@ -334,7 +135,7 @@
 			overscroll-behavior: none;
 		}
 
-		.wrapper {
+		.lock .wrapper {
 			opacity: 0;
 			visibility: hidden;
 		}
@@ -350,8 +151,8 @@
 			 transition: all 0.5s ease 0s; 
 		} */
 
-		.loaded .wrapper {
-			transition: opacity 0.5s ease 0s;
+		.wrapper {
+			transition: opacity 0.3s ease 0s;
 			opacity: 1;
 			visibility: visible;
 		}
@@ -404,7 +205,6 @@
 				if (mainScriptsTag) {
 					clearInterval(checkScriptsInterval);
 					let preloaderImages = document.querySelectorAll('img, video');
-					console.log(preloaderImages);
 					const preloaderStyle = document.querySelector('.preloader-style');
 					if (preloaderImages.length) {
 						const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 40;
@@ -917,7 +717,7 @@
 			</div>
 		</div>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231124182959"></script>
+	<script data-main-script src="js/app.min.js?_v=20231124220410"></script>
 </body>
 
 </html>
