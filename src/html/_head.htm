@@ -402,7 +402,6 @@
 				if (mainScriptsTag) {
 					clearInterval(checkScriptsInterval);
 					let preloaderImages = document.querySelectorAll('img, video');
-					console.log(preloaderImages);
 					const preloaderStyle = document.querySelector('.preloader-style');
 					if (preloaderImages.length) {
 						const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 40;
