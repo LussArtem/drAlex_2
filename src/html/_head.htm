@@ -202,7 +202,7 @@
 				const mainScriptsTag = document.querySelector('[data-main-script]');
 				if (mainScriptsTag) {
 					clearInterval(checkScriptsInterval);
-					let preloaderImages = document.querySelectorAll('img, video');
+					let preloaderImages = document.querySelectorAll('source, video');
 					const preloaderStyle = document.querySelector('.preloader-style');
 					if (preloaderImages.length) {
 						const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 40;
@@ -215,8 +215,13 @@
 							if (imgClone) {
 								imgClone.onload = imageLoaded;
 								imgClone.onerror = imageLoaded;
-								preloaderImage.dataset.src ? imgClone.src = preloaderImage.dataset.src : imgClone.src = preloaderImage.src;
+								preloaderImage.dataset.srcset ? imgClone.src = preloaderImage.dataset.srcset : imgClone.src = preloaderImage.srcset;
 							}
+							// console.log(imgClone.srcset);
+							// console.log(imgClone)
+							// console.log(preloaderImage)
+							// console.log(preloaderImage.dataset.src)
+							console.log(preloaderImage.dataset.srcset)
 						});
 
 
