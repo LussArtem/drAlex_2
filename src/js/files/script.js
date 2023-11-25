@@ -56,8 +56,8 @@ if (currentTheme === 'light' || !prefersDarkScheme.matches) {
 function createIcon(theme, theme2) {
     toggleColorTheme.insertAdjacentHTML(
         'beforeend',
-        `<span class="_icon-${theme}"></span>
-    <span class="_icon-${theme2}"></span>`
+        `<span class="_icon-${theme}" ></span>
+    <span class="_icon-${theme2} is-selected"></span>`
     )
 }
 
@@ -96,3 +96,43 @@ function mouseEnter(e) {
 toggleColorTheme.addEventListener('mouseenter', mouseEnter)
 toggleColorTheme.addEventListener('mouseleave', mouseEnter)
 toggleColorTheme.addEventListener('click', mouseEnter)
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// const carousel = document.querySelector('#toggleColorTheme')
+const button = document.querySelector('#toggleColorTheme')
+// const slider = button.querySelectorAll('span')
+let slides = [...button.children]
+
+// Initial slides position, so user can go from first to last slide (click to the left first)
+button.prepend(slides[slides.length - 1])
+
+// Handling arrow buttons
+const handleArrowClick = (arrow) => {
+    arrow.addEventListener('click', () => {
+        slides = [...button.children]
+        const currSlide = button.querySelector('.is-selected')
+        currSlide.classList.remove('is-selected')
+        let targetSlide
+
+        if (arrow.classList.contains('jsPrev')) {
+            targetSlide = currSlide.previousElementSibling
+            button.prepend(slides[slides.length - 1])
+        }
+
+        if (arrow.classList.contains('jsNext')) {
+            targetSlide = currSlide.nextElementSibling
+            button.append(slides[0])
+        }
+
+        targetSlide.classList.add('is-selected')
+    })
+}
+
+handleArrowClick(button)
