@@ -203,6 +203,7 @@
 				if (mainScriptsTag) {
 					clearInterval(checkScriptsInterval);
 					let preloaderImages = document.querySelectorAll('source, video');
+					// TO-DO img preloader
 					const preloaderStyle = document.querySelector('.preloader-style');
 					if (preloaderImages.length) {
 						const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 40;
