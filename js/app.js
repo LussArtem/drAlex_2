@@ -7416,7 +7416,7 @@ PERFORMANCE OF THIS SOFTWARE.
             createIcon(`night`, "sun");
         }
         function createIcon(theme, theme2) {
-            toggleColorTheme.insertAdjacentHTML("beforeend", `<span class="_icon-${theme}"></span>\n    <span class="_icon-${theme2}"></span>`);
+            toggleColorTheme.insertAdjacentHTML("beforeend", `<span class="_icon-${theme}" ></span>\n    <span class="_icon-${theme2} is-selected"></span>`);
         }
         console.log(toggleColorTheme.children);
         function mixSpan() {
@@ -7431,6 +7431,27 @@ PERFORMANCE OF THIS SOFTWARE.
         toggleColorTheme.addEventListener("mouseenter", mouseEnter);
         toggleColorTheme.addEventListener("mouseleave", mouseEnter);
         toggleColorTheme.addEventListener("click", mouseEnter);
+        const script_button = document.querySelector("#toggleColorTheme");
+        let slides = [ ...script_button.children ];
+        script_button.prepend(slides[slides.length - 1]);
+        const handleArrowClick = arrow => {
+            arrow.addEventListener("click", (() => {
+                slides = [ ...script_button.children ];
+                const currSlide = script_button.querySelector(".is-selected");
+                currSlide.classList.remove("is-selected");
+                let targetSlide;
+                if (arrow.classList.contains("jsPrev")) {
+                    targetSlide = currSlide.previousElementSibling;
+                    script_button.prepend(slides[slides.length - 1]);
+                }
+                if (arrow.classList.contains("jsNext")) {
+                    targetSlide = currSlide.nextElementSibling;
+                    script_button.append(slides[0]);
+                }
+                targetSlide.classList.add("is-selected");
+            }));
+        };
+        handleArrowClick(script_button);
         window["FLS"] = false;
         isWebp();
         addTouchClass();

@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231124225433">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231125193607">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -167,8 +167,8 @@
 			let preloader, preloaderBody, showPecentLoad, showLineLoad;
 			const htmlDocument = document.documentElement;
 			const settings = {
-				// Задержка перед удалением прелоадера из html после окончания загрузки
-				delayRemovePreloader: 1500,
+				// Задержка перед удалением прелоадера из html после окончания загрузки (1500)
+				delayRemovePreloader: 500,
 				// Функционал процентного отображения
 				counter: true,
 				// Функционал процентного отображения загрузки
@@ -288,7 +288,7 @@
 				<div class="header__column">
 					<a data-da=".header__column-center, 768" href="/" class="header__logo"><img src="img/logo.svg" alt="Invite" /></a>
 					<!-- TODO PICTURE Theme -->
-					<button id="toggleColorTheme" class="header__toggle-color"></button>
+					<button id="toggleColorTheme" class="header__toggle-color jsNext"></button>
 					<a data-da=".header__menu, 650, 3" href="tel:+79210729957" class="header__phone button button-inverse">
 						+7 921 072 9957
 					</a>
@@ -914,7 +914,7 @@
 			</div>
 		</div>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231124225433"></script>
+	<script data-main-script src="js/app.min.js?_v=20231125193607"></script>
 </body>
 
 </html>
