@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231125235646">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231126154416">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,6 +64,7 @@
 			transition: transform 0.55s;
 			background-image: url(files/2.gif);
 			background-blend-mode: multiply;
+			/* todo fix on IPHONE */
 		}
 
 		.preloader__one {
@@ -205,6 +206,7 @@
 				if (mainScriptsTag) {
 					clearInterval(checkScriptsInterval);
 					let preloaderImages = document.querySelectorAll('source, video');
+					// TO-DO img preloader
 					const preloaderStyle = document.querySelector('.preloader-style');
 					if (preloaderImages.length) {
 						const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 40;
@@ -293,7 +295,7 @@
 				<div class="header__column">
 					<a aria-label="Вернуться на главную" data-da=".header__column-center, 768" href="/" class="header__logo"><img src="img/logo.svg" alt="Invite" /></a>
 					<button id="toggleColorTheme" aria-label="Переключить цветовую схему" class="header__toggle-color jsNext"></button>
-					<a aria-label="Позвонить" data-da=".header__menu, 650, 3" href="tel:+79210729957" class="header__phone button button-inverse">
+					<a aria-label=" +7 921 072 9957" data-da=".header__menu, 650, 3" href="tel:+79210729957" class="header__phone button button-inverse">
 						+7 921 072 9957
 					</a>
 				</div>
@@ -329,8 +331,8 @@
 					<button aria-label="Получить приглашение" data-popup="#calculate" type="button" class="header__button header__button-desktop button button-accent">
 						Получить приглашение
 					</button>
-					<button type="button" aria-label="Меню" class="header__burger">
-						<div class="menu__icon icon-menu"><span></span></div>
+					<button type="button" aria-label="Меню" class="header__burger icon-menu">
+						<span></span>
 					</button>
 				</div>
 				<div class="header__menu">
@@ -345,28 +347,27 @@
 				<div class="mainscreen__inner">
 					<picture>
 						<source srcset="img/mainscreen/04.webp" type="image/webp" />
-						<img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" data-prlx-cy="10" data-src="img/mainscreen/04.jpg" alt="*" class="mainscreen__img mainscreen__img-1" />
+						<img data-prlx-mouse data-prlx-dxr data-prlx-cx="10" data-prlx-cy="10" src="img/user.png" data-src="img/mainscreen/04.jpg" alt="*" class="mainscreen__img mainscreen__img-1" />
 					</picture>
 					<picture>
 						<source srcset="img/mainscreen/08.webp" type="image/webp" />
-						<img data-prlx-mouse data-prlx-dyr data-src="img/mainscreen/08.jpg" alt="*" class="mainscreen__img mainscreen__img-2" />
-						<source data-srcset="img/mainscreen/08.webp" type="image/webp" />
+						<img data-prlx-mouse data-prlx-dyr src="img/user.png" data-src="img/mainscreen/08.jpg" alt="*" class="mainscreen__img mainscreen__img-2" />
 					</picture>
 					<picture>
 						<source srcset="img/mainscreen/05.webp" type="image/webp" />
-						<img data-prlx-mouse data-prlx-dxr data-src="img/mainscreen/05.jpg" data-prlx-a="150" alt="*" class="mainscreen__img mainscreen__img-3" />
+						<img data-prlx-mouse data-prlx-dxr src="img/user.png" data-src="img/mainscreen/05.jpg" data-prlx-a="150" alt="*" class="mainscreen__img mainscreen__img-3" />
 					</picture>
 					<picture>
 						<source srcset="img/mainscreen/06.webp" type="image/webp" />
-						<img data-prlx-mouse data-prlx-dyr data-prlx-cx="10" data-prlx-cy="10" data-src="img/mainscreen/06.jpg" alt="*" class="mainscreen__img mainscreen__img-4" />
+						<img data-prlx-mouse data-prlx-dyr data-prlx-cx="10" data-prlx-cy="10" src="img/user.png" data-src="img/mainscreen/06.jpg" alt="*" class="mainscreen__img mainscreen__img-4" />
 					</picture>
 					<picture>
 						<source srcset="img/mainscreen/01.webp" type="image/webp" />
-						<img data-prlx-mouse data-prlx-dxr data-src="img/mainscreen/01.jpg" alt="*" class="mainscreen__img mainscreen__img-5" />
+						<img data-prlx-mouse data-prlx-dxr src="img/user.png" data-src="img/mainscreen/01.jpg" alt="*" class="mainscreen__img mainscreen__img-5" />
 					</picture>
 					<picture>
 						<source srcset="img/mainscreen/03.webp" type="image/webp" />
-						<img data-prlx-mouse data-prlx-dyr data-src="img/mainscreen/03.jpg" alt="*" class="mainscreen__img mainscreen__img-6" />
+						<img data-prlx-mouse data-prlx-dyr src="img/user.png" data-src="img/mainscreen/03.jpg" alt="*" class="mainscreen__img mainscreen__img-6" />
 					</picture>
 					<div class="mainscreen__bg">
 						<img src="img/decor.svg" alt="*" class="mainscreen__decor elem" />
@@ -375,7 +376,7 @@
 						<h1 class="mainscreen__title">
 							Получи <span>INVITE</span>
 						</h1>
-						<button aria-label="Навигация по странице" data-goto=".types" type="button" class="mainscreen__button button button-inverse">
+						<button aria-label="Купить INVITE" data-goto=".types" type="button" class="mainscreen__button button button-inverse">
 							Купить INVITE
 						</button>
 					</div>
@@ -395,7 +396,7 @@
 						<nav class="header-printing__nav">
 							<ul data-tabs-titles class="header-printing__list">
 								<li data-tabs-title class="_tab-active">
-									<button aria-label="Подборка музыки на 2024">2024</buttonaria-label>
+									<button aria-label="Подборка музыки на 2024">2024</button aria-label>
 								</li>
 								<li data-tabs-title><button aria-label="Подборка музыки на 2023">2023</button></li>
 								<li data-tabs-title><button aria-label="Подборка музыки разное">миксы</button></li>
@@ -407,10 +408,11 @@
 							<div class="block-printing__wrapper">
 								<ul class="block-printing__list">
 									<li>
-										<a aria-label="Ссылка на пост в телеграм" href="https://t.me/invvitted/14">huntsman | INVITE
+										<a aria-label="huntsman | INVITE
+                                BYRTHDAY" href="https://t.me/invvitted/14">huntsman | INVITE
 											BYRTHDAY
 											<picture>
-												<img data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-a="400" data-src="img/music/3mini.jpg" alt="*" class="block-printing__img" />
+												<img data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-a="400" src="img/user.png" data-src="img/music/3mini.jpg" alt="*" class="block-printing__img" />
 											</picture>
 										</a>
 									</li>
@@ -419,7 +421,7 @@
                                 <picture>
 
                                     <img data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-a="400"
-                                        data-src="img/music/1.png" alt="*" class="block-printing__img" />
+                                        src="img/user.png" data-src="img/music/1.png" alt="*" class="block-printing__img" />
                                 </picture>
                             </a>
                         </li> -->
@@ -435,7 +437,7 @@
 										<a href="#">huntsman-set
 											<picture>
 												<source srcset="img/music/1.webp" type="image/webp" />
-												<img data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-a="400" data-src="img/music/1.png" alt="*" class="block-printing__img" />
+												<img data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-a="400" src="img/user.png" data-src="img/music/1.png" alt="*" class="block-printing__img" />
 											</picture>
 										</a>
 									</li>
@@ -443,7 +445,7 @@
 										<a href="#">huntsman-set
 											<picture>
 												<source srcset="img/can/01.webp" type="image/webp" />
-												<img data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-a="400" data-src="img/can/01.jpg" alt="*" class="block-printing__img" />
+												<img data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-a="400" src="img/user.png" data-src="img/can/01.jpg" alt="*" class="block-printing__img" />
 											</picture>
 										</a>
 									</li>
@@ -452,7 +454,7 @@
                                 <picture>
                                     <source srcset="img/printon.webp" type="image/webp" />
                                     <img data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-a="400"
-                                        data-src="img/printon.jpg" alt="*" class="block-printing__img" />
+                                        src="img/user.png" data-src="img/printon.jpg" alt="*" class="block-printing__img" />
                                 </picture>
                             </a>
                         </li> -->
@@ -468,7 +470,7 @@
 										<a href="#">huntsman-mix
 											<picture>
 												<source srcset="img/printon.webp" type="image/webp" />
-												<img data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-a="400" data-src="img/printon.jpg" alt="*" class="block-printing__img" />
+												<img data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-a="400" src="img/user.png" data-src="img/printon.jpg" alt="*" class="block-printing__img" />
 											</picture>
 										</a>
 									</li>
@@ -476,7 +478,7 @@
 										<a href="#">huntsman-mix
 											<picture>
 												<source srcset="img/printon.webp" type="image/webp" />
-												<img data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-a="400" data-src="img/printon.jpg" alt="*" class="block-printing__img" />
+												<img data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-a="400" src="img/user.png" data-src="img/printon.jpg" alt="*" class="block-printing__img" />
 											</picture>
 										</a>
 									</li>
@@ -484,7 +486,7 @@
 										<a href="#">huntsman-mix
 											<picture>
 												<source srcset="img/printon.webp" type="image/webp" />
-												<img data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-a="400" data-src="img/printon.jpg" alt="*" class="block-printing__img" />
+												<img data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-a="400" src="img/user.png" data-src="img/printon.jpg" alt="*" class="block-printing__img" />
 											</picture>
 										</a>
 									</li>
@@ -492,7 +494,7 @@
 										<a href="#">huntsman-mix
 											<picture>
 												<source srcset="img/printon.webp" type="image/webp" />
-												<img data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-a="400" data-src="img/printon.jpg" alt="*" class="block-printing__img" />
+												<img data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-a="400" src="img/user.png" data-src="img/printon.jpg" alt="*" class="block-printing__img" />
 											</picture>
 										</a>
 									</li>
@@ -500,7 +502,7 @@
 										<a href="#">huntsman-mix
 											<picture>
 												<source srcset="img/printon.webp" type="image/webp" />
-												<img data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-a="400" data-src="img/printon.jpg" alt="*" class="block-printing__img" />
+												<img data-prlx-mouse data-prlx-cx="10" data-prlx-cy="10" data-prlx-a="400" src="img/user.png" data-src="img/printon.jpg" alt="*" class="block-printing__img" />
 											</picture>
 										</a>
 									</li>
@@ -532,7 +534,7 @@
 									<picture>
 
 										<source srcset="img/ivent/4.webp" type="image/webp" />
-										<img data-src="img/ivent/4.png" alt="direct printing" />
+										<img src="img/user.png" data-src="img/ivent/4.png" alt="direct printing" />
 									</picture>
 
 								</div>
@@ -540,7 +542,7 @@
 									<p class="item-types__desc">
 										решать только тебе
 									</p>
-									<button aria-label="узнать больше" data-popup="#orderPrint" type="button" class="item-types__button button button-inverse">
+									<button aria-label="INVITE" data-popup="#orderPrint" type="button" class="item-types__button button button-inverse">
 										INVITE
 									</button>
 								</div>
@@ -551,14 +553,14 @@
 									<picture>
 
 										<source srcset="img/ivent/2.webp" type="image/webp" />
-										<img data-src="img/ivent/2.png" alt="direct printing" />
+										<img src="img/user.png" data-src="img/ivent/2.png" alt="direct printing" />
 									</picture>
 								</div>
 								<div class="item-types__footer">
 									<p class="item-types__desc">
 										время когда было трудно уснуть
 									</p>
-									<button aria-label="узнать больше" data-popup="#orderPrint" type="button" class="item-types__button button button-inverse">
+									<button aria-label="Смотреть" data-popup="#orderPrint" type="button" class="item-types__button button button-inverse">
 										Смотреть
 									</button>
 								</div>
@@ -568,14 +570,14 @@
 								<div class="item-types__img">
 									<picture>
 										<source srcset="img/ivent/3.webp" type="image/webp" />
-										<img data-src="img/ivent/3.png" alt="direct printing" />
+										<img src="img/user.png" data-src="img/ivent/3.png" alt="direct printing" />
 									</picture>
 								</div>
 								<div class="item-types__footer">
 									<p class="item-types__desc">
 										Было давно, но не менее круто!
 									</p>
-									<button aria-label="узнать больше" data-popup="#orderPrint" type="button" class="item-types__button button button-inverse">
+									<button aria-label="Смотреть" data-popup="#orderPrint" type="button" class="item-types__button button button-inverse">
 										Смотреть
 									</button>
 								</div>
@@ -612,14 +614,14 @@
 								<div class="works__img"></div>
 								<div class="works__img works__img-big">
 									<picture>
-										<source data-srcset="img/face/02.webp" type="image/webp" />
-										<img data-src="img/face/02.jpg" alt="*" />
+										<source src="img/user.png" data-srcset="img/face/02.webp" type="image/webp" />
+										<img src="img/user.png" data-src="img/face/02.jpg" alt="*" />
 									</picture>
 								</div>
 								<div class="works__img">
 									<picture>
-										<source data-srcset="img/face/03.webp" type="image/webp" />
-										<img data-src="img/face/03.jpg" alt="*" />
+										<source src="img/user.png" data-srcset="img/face/03.webp" type="image/webp" />
+										<img src="img/user.png" data-src="img/face/03.jpg" alt="*" />
 									</picture>
 								</div>
 								<div class="works__img"></div>
@@ -627,8 +629,8 @@
 							<div class="works__slide swiper-slide">
 								<div class="works__img">
 									<picture>
-										<source data-srcset="img/face/04.webp" type="image/webp" />
-										<img data-src="img/face/04.jpg" alt="*" />
+										<source src="img/user.png" data-srcset="img/face/04.webp" type="image/webp" />
+										<img src="img/user.png" data-src="img/face/04.jpg" alt="*" />
 									</picture>
 								</div>
 								<div class="works__img"></div>
@@ -636,42 +638,42 @@
 								<div class="works__img"></div>
 								<div class="works__img works__img-big">
 									<picture>
-										<source data-srcset="img/face/05.webp" type="image/webp" />
-										<img data-src="img/face/05.jpg" alt="*" />
+										<source src="img/user.png" data-srcset="img/face/05.webp" type="image/webp" />
+										<img src="img/user.png" data-src="img/face/05.jpg" alt="*" />
 									</picture>
 								</div>
 								<div class="works__img">
 									<picture>
-										<source data-srcset="img/face/01.webp" type="image/webp" />
-										<img data-src="img/face/01.jpg" alt="*" />
+										<source src="img/user.png" data-srcset="img/face/01.webp" type="image/webp" />
+										<img src="img/user.png" data-src="img/face/01.jpg" alt="*" />
 									</picture>
 								</div>
 							</div>
 							<div class="works__slide swiper-slide">
 								<div class="works__img">
 									<picture>
-										<source data-srcset="img/face/02.webp" type="image/webp" />
-										<img data-src="img/face/02.jpg" alt="*" />
+										<source src="img/user.png" data-srcset="img/face/02.webp" type="image/webp" />
+										<img src="img/user.png" data-src="img/face/02.jpg" alt="*" />
 									</picture>
 								</div>
 								<div class="works__img works__img-big">
 									<picture>
-										<source data-srcset="img/face/03.webp" type="image/webp" />
-										<img data-src="img/face/03.jpg" alt="*" />
+										<source src="img/user.png" data-srcset="img/face/03.webp" type="image/webp" />
+										<img src="img/user.png" data-src="img/face/03.jpg" alt="*" />
 									</picture>
 								</div>
 								<div class="works__img"></div>
 								<div class="works__img"></div>
 								<div class="works__img">
 									<picture>
-										<source data-srcset="img/face/05.webp" type="image/webp" />
-										<img data-src="img/face/05.jpg" alt="*" />
+										<source src="img/user.png" data-srcset="img/face/05.webp" type="image/webp" />
+										<img src="img/user.png" data-src="img/face/05.jpg" alt="*" />
 									</picture>
 								</div>
 								<div class="works__img">
 									<picture>
-										<source data-srcset="img/face/02.webp" type="image/webp" />
-										<img data-src="img/face/02.jpg" alt="*" />
+										<source src="img/user.png" data-srcset="img/face/02.webp" type="image/webp" />
+										<img src="img/user.png" data-src="img/face/02.jpg" alt="*" />
 									</picture>
 								</div>
 							</div>
@@ -679,39 +681,40 @@
 								<div class="works__img"></div>
 								<div class="works__img works__img-big">
 									<picture>
-										<source data-srcset="img/face/01.webp" type="image/webp" />
-										<img data-src="img/face/01.jpg" alt="*" />
+										<source src="img/user.png" data-srcset="img/face/01.webp" type="image/webp" />
+										<img src="img/user.png" data-src="img/face/01.jpg" alt="*" />
 									</picture>
 								</div>
 								<div class="works__img">
 									<picture>
-										<source data-srcset="img/face/02.webp" type="image/webp" />
-										<img data-src="img/face/02.jpg" alt="*" />
+										<source src="img/user.png" data-srcset="img/face/02.webp" type="image/webp" />
+										<img src="img/user.png" data-src="img/face/02.jpg" alt="*" />
 									</picture>
 								</div>
 								<div class="works__img"></div>
 								<div class="works__img">
 									<picture>
-										<source data-srcset="img/face/03.webp" type="image/webp" />
-										<img data-src="img/face/03.jpg" alt="*" />
+										<source src="img/user.png" data-srcset="img/face/03.webp" type="image/webp" />
+										<img src="img/user.png" data-src="img/face/03.jpg" alt="*" />
 									</picture>
 								</div>
 								<div class="works__img">
 									<picture>
-										<source data-srcset="img/portfolio/1.webp" type="image/webp" />
-										<img data-src="img/portfolio/1.jpg" alt="*" />
+										<source src="img/user.png" data-srcset="img/portfolio/1.webp" type="image/webp" />
+										<img src="img/user.png" data-src="img/portfolio/1.jpg" alt="*" />
 									</picture>
 								</div>
 								<!-- <div class="works__img">
                         <picture>
-                            <source data-srcset="img/face/04.webp" type="image/webp" />
-                            <img data-src="img/face/04.jpg" alt="*" />
+                            <source src="img/user.png" data-srcset="img/face/04.webp" type="image/webp" />
+                            <img src="img/user.png" data-src="img/face/04.jpg" alt="*" />
                         </picture>
                     </div> -->
 							</div>
 						</div>
 						<div class="works__scrollbar scrollbar"></div>
-						<a aria-label="Посмотреть все фото" href="/gallery.html" class="works__more button button-inverse">Хочу
+						<a aria-label="Хочу
+                посмотреть всё" href="/gallery.html" class="works__more button button-inverse">Хочу
 							посмотреть всё</a>
 					</div>
 				</div>
@@ -733,8 +736,8 @@
 								<div class="comment-reviews__header">
 									<div class="comment-reviews__avatar">
 										<picture>
-											<source data-srcset="img/user.webp" type="image/webp" />
-											<img data-src="img/user.png" alt="*" />
+											<source src="img/user.png" data-srcset="img/user.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/user.png" alt="*" />
 										</picture>
 									</div>
 									<div class="comment-reviews__info">
@@ -751,8 +754,8 @@
 								<div class="comment-reviews__header">
 									<div class="comment-reviews__avatar">
 										<picture>
-											<source data-srcset="img/user.webp" type="image/webp" />
-											<img data-src="img/user.png" alt="*" />
+											<source src="img/user.png" data-srcset="img/user.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/user.png" alt="*" />
 										</picture>
 									</div>
 									<div class="comment-reviews__info">
@@ -769,8 +772,8 @@
 								<div class="comment-reviews__header">
 									<div class="comment-reviews__avatar">
 										<picture>
-											<source data-srcset="img/user.webp" type="image/webp" />
-											<img data-src="img/user.png" alt="*" />
+											<source src="img/user.png" data-srcset="img/user.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/user.png" alt="*" />
 										</picture>
 									</div>
 									<div class="comment-reviews__info">
@@ -788,8 +791,8 @@
 								<div class="comment-reviews__header">
 									<div class="comment-reviews__avatar">
 										<picture>
-											<source data-srcset="img/user.webp" type="image/webp" />
-											<img data-src="img/user.png" alt="*" />
+											<source src="img/user.png" data-srcset="img/user.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/user.png" alt="*" />
 										</picture>
 									</div>
 									<div class="comment-reviews__info">
@@ -806,8 +809,8 @@
 								<div class="comment-reviews__header">
 									<div class="comment-reviews__avatar">
 										<picture>
-											<source data-srcset="img/user.webp" type="image/webp" />
-											<img data-src="img/user.png" alt="*" />
+											<source src="img/user.png" data-srcset="img/user.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/user.png" alt="*" />
 										</picture>
 									</div>
 									<div class="comment-reviews__info">
@@ -824,8 +827,8 @@
 								<div class="comment-reviews__header">
 									<div class="comment-reviews__avatar">
 										<picture>
-											<source data-srcset="img/user.webp" type="image/webp" />
-											<img data-src="img/user.png" alt="*" />
+											<source src="img/user.png" data-srcset="img/user.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/user.png" alt="*" />
 										</picture>
 									</div>
 									<div class="comment-reviews__info">
@@ -842,8 +845,8 @@
 								<div class="comment-reviews__header">
 									<div class="comment-reviews__avatar">
 										<picture>
-											<source data-srcset="img/user.webp" type="image/webp" />
-											<img data-src="img/user.png" alt="*" />
+											<source src="img/user.png" data-srcset="img/user.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/user.png" alt="*" />
 										</picture>
 									</div>
 									<div class="comment-reviews__info">
@@ -860,8 +863,8 @@
 								<div class="comment-reviews__header">
 									<div class="comment-reviews__avatar">
 										<picture>
-											<source data-srcset="img/user.webp" type="image/webp" />
-											<img data-src="img/user.png" alt="*" />
+											<source src="img/user.png" data-srcset="img/user.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/user.png" alt="*" />
 										</picture>
 									</div>
 									<div class="comment-reviews__info">
@@ -878,8 +881,8 @@
 								<div class="comment-reviews__header">
 									<div class="comment-reviews__avatar">
 										<picture>
-											<source data-srcset="img/user.webp" type="image/webp" />
-											<img data-src="img/user.png" alt="*" />
+											<source src="img/user.png" data-srcset="img/user.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/user.png" alt="*" />
 										</picture>
 									</div>
 									<div class="comment-reviews__info">
@@ -896,8 +899,8 @@
 								<div class="comment-reviews__header">
 									<div class="comment-reviews__avatar">
 										<picture>
-											<source data-srcset="img/user.webp" type="image/webp" />
-											<img data-src="img/user.png" alt="*" />
+											<source src="img/user.png" data-srcset="img/user.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/user.png" alt="*" />
 										</picture>
 									</div>
 									<div class="comment-reviews__info">
@@ -914,8 +917,8 @@
 								<div class="comment-reviews__header">
 									<div class="comment-reviews__avatar">
 										<picture>
-											<source data-srcset="img/user.webp" type="image/webp" />
-											<img data-src="img/user.png" alt="*" />
+											<source src="img/user.png" data-srcset="img/user.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/user.png" alt="*" />
 										</picture>
 									</div>
 									<div class="comment-reviews__info">
@@ -952,8 +955,8 @@
 								<a href="#">
 									<div class="can__img">
 										<picture>
-											<source data-srcset="img/can/01.webp" type="image/webp" />
-											<img data-src="img/can/01.jpg" alt="*" />
+											<source src="img/user.png" src="img/user.png" data-srcset="img/can/01.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/can/01.jpg" alt="*" />
 										</picture>
 										<span class="_icon-eye"></span>
 									</div>
@@ -962,8 +965,8 @@
 								<a href="#">
 									<div class="can__img">
 										<picture>
-											<source data-srcset="img/can/01.webp" type="image/webp" />
-											<img data-src="img/can/01.jpg" alt="*" />
+											<source src="img/user.png" src="img/user.png" data-srcset="img/can/01.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/can/01.jpg" alt="*" />
 										</picture>
 										<span class="_icon-eye"></span>
 									</div>
@@ -972,8 +975,8 @@
 								<a href="#">
 									<div class="can__img">
 										<picture>
-											<source data-srcset="img/can/01.webp" type="image/webp" />
-											<img data-src="img/can/01.jpg" alt="*" />
+											<source src="img/user.png" src="img/user.png" data-srcset="img/can/01.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/can/01.jpg" alt="*" />
 										</picture>
 										<span class="_icon-eye"></span>
 									</div>
@@ -982,52 +985,8 @@
 								<a href="#">
 									<div class="can__img">
 										<picture>
-											<source data-srcset="img/can/01.webp" type="image/webp" />
-											<img data-src="img/can/01.jpg" alt="*" />
-										</picture>
-										<span class="_icon-eye"></span>
-									</div>
-									Худи
-								</a>
-							</li>
-						</ul>
-						<ul class="can__column">
-							<li>
-								<a href="#">
-									<div class="can__img">
-										<picture>
-											<source data-srcset="img/can/01.webp" type="image/webp" />
-											<img data-src="img/can/01.jpg" alt="*" />
-										</picture>
-										<span class="_icon-eye"></span>
-									</div>
-									Худи
-								</a>
-								<a href="#">
-									<div class="can__img">
-										<picture>
-											<source data-srcset="img/can/01.webp" type="image/webp" />
-											<img data-src="img/can/01.jpg" alt="*" />
-										</picture>
-										<span class="_icon-eye"></span>
-									</div>
-									Худи
-								</a>
-								<a href="#">
-									<div class="can__img">
-										<picture>
-											<source data-srcset="img/can/01.webp" type="image/webp" />
-											<img data-src="img/can/01.jpg" alt="*" />
-										</picture>
-										<span class="_icon-eye"></span>
-									</div>
-									Худи
-								</a>
-								<a href="#">
-									<div class="can__img">
-										<picture>
-											<source data-srcset="img/can/01.webp" type="image/webp" />
-											<img data-src="img/can/01.jpg" alt="*" />
+											<source src="img/user.png" src="img/user.png" data-srcset="img/can/01.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/can/01.jpg" alt="*" />
 										</picture>
 										<span class="_icon-eye"></span>
 									</div>
@@ -1040,8 +999,8 @@
 								<a href="#">
 									<div class="can__img">
 										<picture>
-											<source data-srcset="img/can/01.webp" type="image/webp" />
-											<img data-src="img/can/01.jpg" alt="*" />
+											<source src="img/user.png" src="img/user.png" data-srcset="img/can/01.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/can/01.jpg" alt="*" />
 										</picture>
 										<span class="_icon-eye"></span>
 									</div>
@@ -1050,8 +1009,8 @@
 								<a href="#">
 									<div class="can__img">
 										<picture>
-											<source data-srcset="img/can/01.webp" type="image/webp" />
-											<img data-src="img/can/01.jpg" alt="*" />
+											<source src="img/user.png" src="img/user.png" data-srcset="img/can/01.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/can/01.jpg" alt="*" />
 										</picture>
 										<span class="_icon-eye"></span>
 									</div>
@@ -1060,8 +1019,8 @@
 								<a href="#">
 									<div class="can__img">
 										<picture>
-											<source data-srcset="img/can/01.webp" type="image/webp" />
-											<img data-src="img/can/01.jpg" alt="*" />
+											<source src="img/user.png" src="img/user.png" data-srcset="img/can/01.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/can/01.jpg" alt="*" />
 										</picture>
 										<span class="_icon-eye"></span>
 									</div>
@@ -1070,8 +1029,52 @@
 								<a href="#">
 									<div class="can__img">
 										<picture>
-											<source data-srcset="img/can/01.webp" type="image/webp" />
-											<img data-src="img/can/01.jpg" alt="*" />
+											<source src="img/user.png" src="img/user.png" data-srcset="img/can/01.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/can/01.jpg" alt="*" />
+										</picture>
+										<span class="_icon-eye"></span>
+									</div>
+									Худи
+								</a>
+							</li>
+						</ul>
+						<ul class="can__column">
+							<li>
+								<a href="#">
+									<div class="can__img">
+										<picture>
+											<source src="img/user.png" src="img/user.png" data-srcset="img/can/01.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/can/01.jpg" alt="*" />
+										</picture>
+										<span class="_icon-eye"></span>
+									</div>
+									Худи
+								</a>
+								<a href="#">
+									<div class="can__img">
+										<picture>
+											<source src="img/user.png" src="img/user.png" data-srcset="img/can/01.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/can/01.jpg" alt="*" />
+										</picture>
+										<span class="_icon-eye"></span>
+									</div>
+									Худи
+								</a>
+								<a href="#">
+									<div class="can__img">
+										<picture>
+											<source src="img/user.png" src="img/user.png" data-srcset="img/can/01.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/can/01.jpg" alt="*" />
+										</picture>
+										<span class="_icon-eye"></span>
+									</div>
+									Худи
+								</a>
+								<a href="#">
+									<div class="can__img">
+										<picture>
+											<source src="img/user.png" src="img/user.png" data-srcset="img/can/01.webp" type="image/webp" />
+											<img src="img/user.png" data-src="img/can/01.jpg" alt="*" />
 										</picture>
 										<span class="_icon-eye"></span>
 									</div>
@@ -1104,25 +1107,26 @@
 				<div class="footer__column footer__column-first">
 					<a aria-label="Вернуться на главную" href="#" class="footer__logo"><img src="img/logo.svg" alt="Logo"></a>
 					<div class="footer__info">
-						<a aria-label="найти нас на карте" href="https://goo.gl/maps/EWqWYkj4M3mp9iSJ7" target="_blank" class="footer__location">Калининград,
+						<a aria-label="Калининград,
+					Königsberg Cathedral" href="https://goo.gl/maps/EWqWYkj4M3mp9iSJ7" target="_blank" class="footer__location">Калининград,
 							Königsberg Cathedral</a>
-						<a aria-label="Позвонить нам" href="tel:+380666225191" class="footer__phone">+38 (066) 622 5191</a>
-						<a aria-label="Написать нам" href="mailto:Alexgubkin@mail.ru" class="footer__mail">Alexgubkin@mail.ru</a>
+						<a aria-label="+7 921 072 9957" href="tel:+380666225191" class="footer__phone">+7 921 072 9957</a>
+						<a aria-label="Alexgubkin@mail.ru" href="mailto:Alexgubkin@mail.ru" class="footer__mail">Alexgubkin@mail.ru</a>
 					</div>
 				</div>
 				<div class="footer__column footer__column-last">
 					<nav class="footer__menu menu-footer">
 						<ul class="menu-footer__list">
-							<li><a aria-label="Навигация по странице `Главная`" href="/index.html">Главная</a></li>
-							<li><a aria-label="Навигация по странице `Прошедшее`" data-goto=".types" href="#">Прошедшее</a></li>
-							<li><a aria-label="Навигация по странице `Отзывы`" data-goto=".reviews" href="#">Отзывы</a></li>
-							<li><a aria-label="Навигация по странице `В начало`" data-goto=".mainscreen" href="#">В начало</a>
+							<li><a aria-label="Главная" href="/index.html">Главная</a></li>
+							<li><a aria-label="Прошедшее" data-goto=".types" href="#">Прошедшее</a></li>
+							<li><a aria-label="Отзывы" data-goto=".reviews" href="#">Отзывы</a></li>
+							<li><a aria-label="В начало" data-goto=".mainscreen" href="#">В начало</a>
 							</li>
-							<li><a aria-label="Навигация по сайту `Плейлист`" data-goto=".printing" href="#">Плейлист</a></li>
-							<li><a aria-label="Навигация по сайту `Плейлист`" data-goto=".works" href="#">Галерея</a></li>
-							<li><a aria-label="Навигация по сайту `Мерч`" data-goto=".can" href="#">Мерч</a></li>
-							<li><a aria-label="Навигация по сайту `Напишите нам`" href="#">Пишите нам</a></li>
-							<li><a aria-label="Навигация по сайту `о нас`" href="/about-us.html">О нас</a></li>
+							<li><a aria-label="Плейлист" data-goto=".printing" href="#">Плейлист</a></li>
+							<li><a aria-label="Галерея" data-goto=".works" href="#">Галерея</a></li>
+							<li><a aria-label="Мерч" data-goto=".can" href="#">Мерч</a></li>
+							<li><a aria-label="Пишите нам" href="#">Пишите нам</a></li>
+							<li><a aria-label="О нас" href="/about-us.html">О нас</a></li>
 						</ul>
 					</nav>
 					<div class="footer__social">
@@ -1333,7 +1337,7 @@
 			</div>
 		</div>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231125235646"></script>
+	<script data-main-script src="js/app.min.js?_v=20231126154416"></script>
 </body>
 
 </html>

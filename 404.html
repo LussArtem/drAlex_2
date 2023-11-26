@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-<link rel="stylesheet" href="css/style.min.css?_v=20231125235646">
+<link rel="stylesheet" href="css/style.min.css?_v=20231126154416">
 <link rel="shortcut icon" href="favicon.ico">
 <!-- <meta name="robots" content="noindex, nofollow"> -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,6 +63,7 @@
 		transition: transform 0.55s;
 		background-image: url(files/2.gif);
 		background-blend-mode: multiply;
+		/* todo fix on IPHONE */
 	}
 
 	.preloader__one {
@@ -204,6 +205,7 @@
 			if (mainScriptsTag) {
 				clearInterval(checkScriptsInterval);
 				let preloaderImages = document.querySelectorAll('source, video');
+				// TO-DO img preloader
 				const preloaderStyle = document.querySelector('.preloader-style');
 				if (preloaderImages.length) {
 					const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 40;
@@ -291,7 +293,7 @@
 				<div class="header__column">
 					<a aria-label="Вернуться на главную" data-da=".header__column-center, 768" href="/" class="header__logo"><img src="img/logo.svg" alt="Invite" /></a>
 					<button id="toggleColorTheme" aria-label="Переключить цветовую схему" class="header__toggle-color jsNext"></button>
-					<a aria-label="Позвонить" data-da=".header__menu, 650, 3" href="tel:+79210729957" class="header__phone button button-inverse">
+					<a aria-label=" +7 921 072 9957" data-da=".header__menu, 650, 3" href="tel:+79210729957" class="header__phone button button-inverse">
 						+7 921 072 9957
 					</a>
 				</div>
@@ -327,8 +329,8 @@
 					<button aria-label="Получить приглашение" data-popup="#calculate" type="button" class="header__button header__button-desktop button button-accent">
 						Получить приглашение
 					</button>
-					<button type="button" aria-label="Меню" class="header__burger">
-						<div class="menu__icon icon-menu"><span></span></div>
+					<button type="button" aria-label="Меню" class="header__burger icon-menu">
+						<span></span>
 					</button>
 				</div>
 				<div class="header__menu">
@@ -339,7 +341,7 @@
 			</div>
 		</header>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231125235646"></script>
+	<script data-main-script src="js/app.min.js?_v=20231126154416"></script>
 	<main class="page">
 		<section data-fullscreen class="error-page">
 			<div class="error-page__items">

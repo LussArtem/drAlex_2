@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231125235646">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231126154416">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,6 +64,7 @@
 			transition: transform 0.55s;
 			background-image: url(files/2.gif);
 			background-blend-mode: multiply;
+			/* todo fix on IPHONE */
 		}
 
 		.preloader__one {
@@ -205,6 +206,7 @@
 				if (mainScriptsTag) {
 					clearInterval(checkScriptsInterval);
 					let preloaderImages = document.querySelectorAll('source, video');
+					// TO-DO img preloader
 					const preloaderStyle = document.querySelector('.preloader-style');
 					if (preloaderImages.length) {
 						const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 40;
@@ -293,7 +295,7 @@
 				<div class="header__column">
 					<a aria-label="Вернуться на главную" data-da=".header__column-center, 768" href="/" class="header__logo"><img src="img/logo.svg" alt="Invite" /></a>
 					<button id="toggleColorTheme" aria-label="Переключить цветовую схему" class="header__toggle-color jsNext"></button>
-					<a aria-label="Позвонить" data-da=".header__menu, 650, 3" href="tel:+79210729957" class="header__phone button button-inverse">
+					<a aria-label=" +7 921 072 9957" data-da=".header__menu, 650, 3" href="tel:+79210729957" class="header__phone button button-inverse">
 						+7 921 072 9957
 					</a>
 				</div>
@@ -329,8 +331,8 @@
 					<button aria-label="Получить приглашение" data-popup="#calculate" type="button" class="header__button header__button-desktop button button-accent">
 						Получить приглашение
 					</button>
-					<button type="button" aria-label="Меню" class="header__burger">
-						<div class="menu__icon icon-menu"><span></span></div>
+					<button type="button" aria-label="Меню" class="header__burger icon-menu">
+						<span></span>
 					</button>
 				</div>
 				<div class="header__menu">
@@ -345,7 +347,7 @@
 			<nav class="breadcrumbs breadcrumbs-catalog">
 				<div class="breadcrumbs__container">
 					<ol class="breadcrumbs-catalog__list">
-						<li><a aria-label="Вернуться на главную" href="/home.html">Главная</a></li>
+						<li><a aria-label="Главная" href="/home.html">Главная</a></li>
 						<li><a aria-label="текущая" class="_active" href="#">О нас</a></li>
 
 					</ol>
@@ -369,74 +371,74 @@
 						<div class="partners__items swiper-wrapper">
 							<div class="partners__item swiper-slide">
 								<picture>
-									<source data-srcset="img/partners/01.webp" type="image/webp" />
-									<img data-src="img/partners/01.png" alt="*" />
+									<source src="img/user.png" data-srcset="img/partners/01.webp" type="image/webp" />
+									<img src="img/user.png" data-src="img/partners/01.png" alt="*" />
 								</picture>
 							</div>
 							<div class="partners__item swiper-slide">
 								<picture>
-									<source data-srcset="img/partners/02.webp" type="image/webp" />
-									<img data-src="img/partners/02.png" alt="*" />
+									<source src="img/user.png" data-srcset="img/partners/02.webp" type="image/webp" />
+									<img src="img/user.png" data-src="img/partners/02.png" alt="*" />
 								</picture>
 							</div>
 							<div class="partners__item swiper-slide">
 								<picture>
-									<source data-srcset="img/partners/03.webp" type="image/webp" />
-									<img data-src="img/partners/03.png" alt="*" />
+									<source src="img/user.png" data-srcset="img/partners/03.webp" type="image/webp" />
+									<img src="img/user.png" data-src="img/partners/03.png" alt="*" />
 								</picture>
 							</div>
 							<div class="partners__item swiper-slide">
 								<picture>
-									<source data-srcset="img/partners/04.webp" type="image/webp" />
-									<img data-src="img/partners/04.png" alt="*" />
+									<source src="img/user.png" data-srcset="img/partners/04.webp" type="image/webp" />
+									<img src="img/user.png" data-src="img/partners/04.png" alt="*" />
 								</picture>
 							</div>
 							<div class="partners__item swiper-slide">
 								<picture>
-									<source data-srcset="img/partners/05.webp" type="image/webp" />
-									<img data-src="img/partners/05.png" alt="*" />
+									<source src="img/user.png" data-srcset="img/partners/05.webp" type="image/webp" />
+									<img src="img/user.png" data-src="img/partners/05.png" alt="*" />
 								</picture>
 							</div>
 							<div class="partners__item swiper-slide">
 								<picture>
-									<source data-srcset="img/partners/06.webp" type="image/webp" />
-									<img data-src="img/partners/06.png" alt="*" />
+									<source src="img/user.png" data-srcset="img/partners/06.webp" type="image/webp" />
+									<img src="img/user.png" data-src="img/partners/06.png" alt="*" />
 								</picture>
 							</div>
 							<div class="partners__item swiper-slide">
 								<picture>
-									<source data-srcset="img/partners/07.webp" type="image/webp" />
-									<img data-src="img/partners/07.png" alt="*" />
+									<source src="img/user.png" data-srcset="img/partners/07.webp" type="image/webp" />
+									<img src="img/user.png" data-src="img/partners/07.png" alt="*" />
 								</picture>
 							</div>
 							<div class="partners__item swiper-slide">
 								<picture>
-									<source data-srcset="img/partners/08.webp" type="image/webp" />
-									<img data-src="img/partners/08.png" alt="*" />
+									<source src="img/user.png" data-srcset="img/partners/08.webp" type="image/webp" />
+									<img src="img/user.png" data-src="img/partners/08.png" alt="*" />
 								</picture>
 							</div>
 							<div class="partners__item swiper-slide">
 								<picture>
-									<source data-srcset="img/partners/05.webp" type="image/webp" />
-									<img data-src="img/partners/05.png" alt="*" />
+									<source src="img/user.png" data-srcset="img/partners/05.webp" type="image/webp" />
+									<img src="img/user.png" data-src="img/partners/05.png" alt="*" />
 								</picture>
 							</div>
 							<div class="partners__item swiper-slide">
 								<picture>
-									<source data-srcset="img/partners/06.webp" type="image/webp" />
-									<img data-src="img/partners/06.png" alt="*" />
+									<source src="img/user.png" data-srcset="img/partners/06.webp" type="image/webp" />
+									<img src="img/user.png" data-src="img/partners/06.png" alt="*" />
 								</picture>
 							</div>
 							<div class="partners__item swiper-slide">
 								<picture>
-									<source data-srcset="img/partners/07.webp" type="image/webp" />
-									<img data-src="img/partners/07.png" alt="*" />
+									<source src="img/user.png" data-srcset="img/partners/07.webp" type="image/webp" />
+									<img src="img/user.png" data-src="img/partners/07.png" alt="*" />
 								</picture>
 							</div>
 							<div class="partners__item swiper-slide">
 								<picture>
-									<source data-srcset="img/partners/08.webp" type="image/webp" />
-									<img data-src="img/partners/08.png" alt="*" />
+									<source src="img/user.png" data-srcset="img/partners/08.webp" type="image/webp" />
+									<img src="img/user.png" data-src="img/partners/08.png" alt="*" />
 								</picture>
 							</div>
 						</div>
@@ -495,25 +497,26 @@
 				<div class="footer__column footer__column-first">
 					<a aria-label="Вернуться на главную" href="#" class="footer__logo"><img src="img/logo.svg" alt="Logo"></a>
 					<div class="footer__info">
-						<a aria-label="найти нас на карте" href="https://goo.gl/maps/EWqWYkj4M3mp9iSJ7" target="_blank" class="footer__location">Калининград,
+						<a aria-label="Калининград,
+					Königsberg Cathedral" href="https://goo.gl/maps/EWqWYkj4M3mp9iSJ7" target="_blank" class="footer__location">Калининград,
 							Königsberg Cathedral</a>
-						<a aria-label="Позвонить нам" href="tel:+380666225191" class="footer__phone">+38 (066) 622 5191</a>
-						<a aria-label="Написать нам" href="mailto:Alexgubkin@mail.ru" class="footer__mail">Alexgubkin@mail.ru</a>
+						<a aria-label="+7 921 072 9957" href="tel:+380666225191" class="footer__phone">+7 921 072 9957</a>
+						<a aria-label="Alexgubkin@mail.ru" href="mailto:Alexgubkin@mail.ru" class="footer__mail">Alexgubkin@mail.ru</a>
 					</div>
 				</div>
 				<div class="footer__column footer__column-last">
 					<nav class="footer__menu menu-footer">
 						<ul class="menu-footer__list">
-							<li><a aria-label="Навигация по странице `Главная`" href="/index.html">Главная</a></li>
-							<li><a aria-label="Навигация по странице `Прошедшее`" data-goto=".types" href="#">Прошедшее</a></li>
-							<li><a aria-label="Навигация по странице `Отзывы`" data-goto=".reviews" href="#">Отзывы</a></li>
-							<li><a aria-label="Навигация по странице `В начало`" data-goto=".mainscreen" href="#">В начало</a>
+							<li><a aria-label="Главная" href="/index.html">Главная</a></li>
+							<li><a aria-label="Прошедшее" data-goto=".types" href="#">Прошедшее</a></li>
+							<li><a aria-label="Отзывы" data-goto=".reviews" href="#">Отзывы</a></li>
+							<li><a aria-label="В начало" data-goto=".mainscreen" href="#">В начало</a>
 							</li>
-							<li><a aria-label="Навигация по сайту `Плейлист`" data-goto=".printing" href="#">Плейлист</a></li>
-							<li><a aria-label="Навигация по сайту `Плейлист`" data-goto=".works" href="#">Галерея</a></li>
-							<li><a aria-label="Навигация по сайту `Мерч`" data-goto=".can" href="#">Мерч</a></li>
-							<li><a aria-label="Навигация по сайту `Напишите нам`" href="#">Пишите нам</a></li>
-							<li><a aria-label="Навигация по сайту `о нас`" href="/about-us.html">О нас</a></li>
+							<li><a aria-label="Плейлист" data-goto=".printing" href="#">Плейлист</a></li>
+							<li><a aria-label="Галерея" data-goto=".works" href="#">Галерея</a></li>
+							<li><a aria-label="Мерч" data-goto=".can" href="#">Мерч</a></li>
+							<li><a aria-label="Пишите нам" href="#">Пишите нам</a></li>
+							<li><a aria-label="О нас" href="/about-us.html">О нас</a></li>
 						</ul>
 					</nav>
 					<div class="footer__social">
@@ -724,7 +727,7 @@
 			</div>
 		</div>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231125235646"></script>
+	<script data-main-script src="js/app.min.js?_v=20231126154416"></script>
 </body>
 
 </html>
