@@ -4,7 +4,7 @@
             <div class="popup__order-print order-print">
                 <button aria-label="закрыть окно" data-close type="button" class="popup__close _icon-close"></button>
                 <div class="order-print__title">Представьтесь</div>
-                <form action="" class="order-print__form">
+                <form action="files/sendmail/sendmail.php" class="order-print__form">
                     <!-- <select name="interest" data-class-modif="order-print__select">
                         <option value="1" selected>Що вас цікавить? *</option>
                         <option value="2">Пункт №2</option>
@@ -29,11 +29,10 @@
                     </select>
                     <textarea name="comment" placeholder="Комментарий" class="input"></textarea>
                     <div class="order-print__action">
-                        <button aria-label="прикрепить файл" class="order-print__file _icon-file"><input type="file"
-                                name="file">Прикрепить
-                            документ</button>
-                        <!-- <a href="" class="order-print__file _icon-file"><input type="file" name="file">Прикрепить
-                            документ</a> -->
+                        <label class="order-print__file _icon-file" for="upload-photo">Прикрепить
+                            документ</label>
+                        <input style="opacity: 0; position: absolute; z-index: -1;" id="upload-photo" type="file"
+                            name="file">
                         <button aria-label="отправить заполненую форму" type="submit"
                             class="order-print__button button button-accent">Отправить</button>
                     </div>
