@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231126161213">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231127133352">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -293,7 +293,7 @@
 		<header class="header" data-lp>
 			<div class="header__container">
 				<div class="header__column">
-					<a aria-label="Вернуться на главную" data-da=".header__column-center, 768" href="/" class="header__logo"><img src="img/logo.svg" alt="Invite" /></a>
+					<a aria-label="Вернуться на главную" data-da=".header__column-center, 768" href="/" class="header__logo"><img src="img/logo.svg" alt="Invite"></a>
 					<button id="toggleColorTheme" aria-label="Переключить цветовую схему" class="header__toggle-color jsNext"></button>
 					<a aria-label=" +7 921 072 9957" data-da=".header__menu, 650, 3" href="tel:+79210729957" class="header__phone button button-inverse">
 						+7 921 072 9957
@@ -573,7 +573,7 @@
 				<div class="popup__order-print order-print">
 					<button aria-label="закрыть окно" data-close type="button" class="popup__close _icon-close"></button>
 					<div class="order-print__title">Представьтесь</div>
-					<form action="" class="order-print__form">
+					<form action="files/sendmail/sendmail.php" class="order-print__form">
 						<!-- <select name="interest" data-class-modif="order-print__select">
                         <option value="1" selected>Що вас цікавить? *</option>
                         <option value="2">Пункт №2</option>
@@ -598,10 +598,9 @@
 						</select>
 						<textarea name="comment" placeholder="Комментарий" class="input"></textarea>
 						<div class="order-print__action">
-							<button aria-label="прикрепить файл" class="order-print__file _icon-file"><input type="file" name="file">Прикрепить
-								документ</button>
-							<!-- <a href="" class="order-print__file _icon-file"><input type="file" name="file">Прикрепить
-                            документ</a> -->
+							<label class="order-print__file _icon-file" for="upload-photo">Прикрепить
+								документ</label>
+							<input style="opacity: 0; position: absolute; z-index: -1;" id="upload-photo" type="file" name="file">
 							<button aria-label="отправить заполненую форму" type="submit" class="order-print__button button button-accent">Отправить</button>
 						</div>
 					</form>
@@ -727,7 +726,7 @@
 			</div>
 		</div>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231126161213"></script>
+	<script data-main-script src="js/app.min.js?_v=20231127133352"></script>
 </body>
 
 </html>
