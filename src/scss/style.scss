@@ -116,6 +116,7 @@ body {
     // Чуйна
     [class*='__container'] {
         @if ($maxWidthContainer>0) {
+            position: relative;
             max-width: rem($containerWidth);
             margin: 0 auto;
         }

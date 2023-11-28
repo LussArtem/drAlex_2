@@ -9,6 +9,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+[class*='_icon-'] {
+    position: relative;
+}
 [class*='_icon-']:after {
     display: block;
     font-family: 'icons';
