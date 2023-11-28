@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-<link rel="stylesheet" href="css/style.min.css?_v=20231128143335">
+<link rel="stylesheet" href="css/style.min.css?_v=20231128211921">
 <link rel="shortcut icon" href="favicon.ico">
 <!-- <meta name="robots" content="noindex, nofollow"> -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -182,6 +182,7 @@
 			},
 		};
 		const checkBodyinterval = setInterval(() => {
+			alert("check1");
 			if (document.body) {
 				clearInterval(checkBodyinterval);
 				const preloaderTemplate = `
@@ -201,13 +202,17 @@
 			}
 		}, 10);
 		const checkScriptsInterval = setInterval(() => {
+			alert("check2");
 			const mainScriptsTag = document.querySelector('[data-main-script]');
 			if (mainScriptsTag) {
+				alert("check3");
 				clearInterval(checkScriptsInterval);
 				let preloaderImages = document.querySelectorAll('source, video');
 				// TO-DO img preloader
 				const preloaderStyle = document.querySelector('.preloader-style');
+				console.log(preloaderStyle);
 				if (preloaderImages.length) {
+					alert("check5");
 					const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 40;
 					let imagesLoadedCount = counter = progress = 0;
 					htmlDocument.classList.add('loading');
@@ -216,6 +221,7 @@
 					preloaderImages.forEach(preloaderImage => {
 						const imgClone = document.createElement('img');
 						if (imgClone) {
+
 							imgClone.onload = imageLoaded;
 							imgClone.onerror = imageLoaded;
 							preloaderImage.dataset.srcset ? imgClone.src = preloaderImage.dataset.srcset : imgClone.src = preloaderImage.srcset;
@@ -246,17 +252,18 @@
 
 						let timer = setInterval(() => {
 							if (htmlDocument.closest('.download-done')) {
+								alert("check10");
 								htmlDocument.classList.remove('lock');
 								htmlDocument.classList.remove('loading');
-								htmlDocument.classList.add('preload-animation');
 								setTimeout(() => {
+									alert("check11");
 									htmlDocument.classList.remove('download-done');
 									htmlDocument.classList.add('loaded');
 								}, settings.delayRemovePreloader >= 500 ? settings.delayRemovePreloader - 500 : 0);
 								const intervalRemovePreloader = setInterval(() => {
-									htmlDocument.classList.remove('preload-animation');
 									preloader.remove();
 									if (preloaderStyle) {
+										alert("check12");
 										preloaderStyle.remove();
 									}
 									clearInterval(intervalRemovePreloader);
@@ -271,8 +278,10 @@
 					}
 				} else {
 					if (preloaderStyle) {
+						alert("check13");
 						preloaderStyle.remove();
 					}
+					alert("check14");
 					preloaderContainer.remove();
 				}
 			}
@@ -336,7 +345,7 @@
 			</div>
 		</header>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231128143335"></script>
+	<script data-main-script src="js/app.min.js?_v=20231128211921"></script>
 	<main class="page">
 		<section data-fullscreen class="error-page">
 			<div class="error-page__items">
