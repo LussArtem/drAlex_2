@@ -63,7 +63,6 @@ function mixSpan() {
     //     toggleColorTheme.appendChild(toggleColorTheme.children[i])
     // }
     let A = Array.from(toggleColorTheme.children)
-    console.log(A[0].className)
 }
 
 // // клик
