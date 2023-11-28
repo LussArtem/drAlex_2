@@ -49,16 +49,16 @@
         padding-right: 15px;
     }
 
-    &__bg {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+    // &__bg {
+    //     position: absolute;
+    //     top: 50%;
+    //     left: 50%;
+    //     transform: translate(-50%, -50%);
+    // }
 
-    &__decor {
-        height: auto;
-    }
+    // &__decor {
+    //     height: auto;
+    // }
 
     &__content {
         position: relative;
@@ -93,7 +93,7 @@
     }
 }
 .light {
-    .mainscreen__bg {
+    .page-bg {
         filter: invert(0.9);
     }
 }

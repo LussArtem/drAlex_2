@@ -1,9 +1,9 @@
 .works {
     @include adaptiveValue('margin-bottom', 20, 97.5, 5);
-    &__decor {
-        position: absolute;
-        z-index: -1;
-    }
+    // &__decor {
+    //     position: absolute;
+    //     z-index: -1;
+    // }
 
     &__txt {
         animation: rightText 30s linear infinite;

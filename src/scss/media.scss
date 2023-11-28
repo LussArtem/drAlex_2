@@ -185,9 +185,9 @@
         width: 16.3125rem;
     }
 
-    .mainscreen__decor {
-        width: 61.875rem;
-    }
+    // .mainscreen__decor {
+    //     width: 61.875rem;
+    // }
 
     .mainscreen__content {
         padding-bottom: 18.75rem;
@@ -1019,9 +1019,9 @@
         width: 3.75rem;
     }
 
-    .mainscreen__decor {
-        width: 25rem;
-    }
+    // .mainscreen__decor {
+    //     width: 25rem;
+    // }
 
     .mainscreen__content {
         padding-top: 9.375rem;
@@ -2058,17 +2058,17 @@
         }
     }
 
-    @supports (width: clamp(25rem, 15.4838709677rem + 47.5806451613vw, 61.875rem)) {
-        .mainscreen__decor {
-            width: clamp(25rem, 15.4838709677rem + 47.5806451613vw, 61.875rem);
-        }
-    }
+    // @supports (width: clamp(25rem, 15.4838709677rem + 47.5806451613vw, 61.875rem)) {
+    //     .mainscreen__decor {
+    //         width: clamp(25rem, 15.4838709677rem + 47.5806451613vw, 61.875rem);
+    //     }
+    // }
 
-    @supports not (width: clamp(25rem, 15.4838709677rem + 47.5806451613vw, 61.875rem)) {
-        .mainscreen__decor {
-            width: calc(25rem + 36.875 * (100vw - 20rem) / 77.5);
-        }
-    }
+    // @supports not (width: clamp(25rem, 15.4838709677rem + 47.5806451613vw, 61.875rem)) {
+    //     .mainscreen__decor {
+    //         width: calc(25rem + 36.875 * (100vw - 20rem) / 77.5);
+    //     }
+    // }
 
     @supports (padding-top: clamp(9.375rem, 5.0201612903rem + 21.7741935484vw, 26.25rem)) {
         .mainscreen__content {

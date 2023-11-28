@@ -63,3 +63,38 @@
         color: var(--accent);
     }
 }
+
+.page-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    &__decor {
+        height: auto;
+        @media (min-width: 1920px) {
+            width: 70rem;
+        }
+        @include adaptiveValue('width', 1500, 800, 340, 1980);
+        @media (max-width: 600px) {
+            width: 41rem;
+        }
+    }
+}
+.elem {
+    animation-name: decor;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+// keyframes
+
+@keyframes decor {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
