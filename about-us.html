@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231128213701">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231128230132">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -220,7 +220,7 @@
 						let imagesLoadedCount = counter = progress = 0;
 						htmlDocument.classList.add('loading');
 						htmlDocument.classList.add('lock');
-						window.addEventListener("load", () => htmlDocument.classList.add('download-done'));
+						window.addEventListener("load", () => htmlDocument.classList.add('download-done'), alert("check4"););
 						preloaderImages.forEach(preloaderImage => {
 							const imgClone = document.createElement('img');
 							if (imgClone) {
@@ -733,7 +733,7 @@
 			</div>
 		</div>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231128213701"></script>
+	<script data-main-script src="js/app.min.js?_v=20231128230132"></script>
 </body>
 
 </html>
