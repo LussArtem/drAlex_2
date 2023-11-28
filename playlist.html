@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231129002952">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231129005331">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -226,20 +226,31 @@
 						alert(htmlDocument.classList);
 						if (document.readyState === 'loading') {
 							alert('document is already ready, just execute code here');
+							window.addEventListener("load", () => {
+								htmlDocument.classList.add('download-done')
+								alert("check4.2")
+							});
 
 						} else if (document.readyState === 'complete') {
 							alert('document was not ready, place code here');
+							window.addEventListener("load", () => {
+								htmlDocument.classList.add('download-done')
+								alert("check4.2")
+							});
+
 
 						} else {
+							htmlDocument.classList.add('download-done');
 							alert('Страница уже загружена и DOM дерево построено, но дополнительные ресурсы, такие как изображения и iframe (en-US), все ещё загружаются.')
 						}
-						window.addEventListener('DOMContentLoaded', function() {
-							alert("domload")
-						})
-						window.addEventListener("load", () => {
-							htmlDocument.classList.add('download-done')
-							alert("check4.2")
-						});
+						// window.addEventListener('DOMContentLoaded', function () {
+						// 	alert("domload")
+						// })
+						// window.addEventListener("load", () => {
+						// 	htmlDocument.classList.add('download-done')
+						// 	alert("check4.2")
+						// }
+						// );
 						preloaderImages.forEach(preloaderImage => {
 							const imgClone = document.createElement('img');
 							if (imgClone) {
@@ -695,7 +706,7 @@
 			</div>
 		</div>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231129002952"></script>
+	<script data-main-script src="js/app.min.js?_v=20231129005331"></script>
 </body>
 
 </html>
