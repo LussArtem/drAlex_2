@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231128211921">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231128213701">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -206,14 +206,16 @@
 				alert("check2");
 				const mainScriptsTag = document.querySelector('[data-main-script]');
 				if (mainScriptsTag) {
-					alert("check3");
+
 					clearInterval(checkScriptsInterval);
 					let preloaderImages = document.querySelectorAll('source, video');
 					// TO-DO img preloader
 					const preloaderStyle = document.querySelector('.preloader-style');
+					alert("check3", preloaderImages.length);
+					alert("check3", preloaderStyle);
 					console.log(preloaderStyle);
 					if (preloaderImages.length) {
-						alert("check5");
+						alert("check4");
 						const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 40;
 						let imagesLoadedCount = counter = progress = 0;
 						htmlDocument.classList.add('loading');
@@ -253,18 +255,19 @@
 
 							let timer = setInterval(() => {
 								if (htmlDocument.closest('.download-done')) {
-									alert("check10");
+									alert("check5");
 									htmlDocument.classList.remove('lock');
 									htmlDocument.classList.remove('loading');
 									setTimeout(() => {
-										alert("check11");
+										alert("check6");
 										htmlDocument.classList.remove('download-done');
 										htmlDocument.classList.add('loaded');
 									}, settings.delayRemovePreloader >= 500 ? settings.delayRemovePreloader - 500 : 0);
 									const intervalRemovePreloader = setInterval(() => {
 										preloader.remove();
+										alert("check10");
 										if (preloaderStyle) {
-											alert("check12");
+											alert("check7");
 											preloaderStyle.remove();
 										}
 										clearInterval(intervalRemovePreloader);
@@ -279,10 +282,10 @@
 						}
 					} else {
 						if (preloaderStyle) {
-							alert("check13");
+							alert("check8");
 							preloaderStyle.remove();
 						}
-						alert("check14");
+						alert("check9");
 						preloaderContainer.remove();
 					}
 				}
@@ -747,7 +750,7 @@
 			</div>
 		</div>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231128211921"></script>
+	<script data-main-script src="js/app.min.js?_v=20231128213701"></script>
 </body>
 
 </html>
