@@ -32,10 +32,6 @@ const currentTheme = localStorage.getItem('theme')
 // функция смены темы
 toggleColorTheme.addEventListener('click', (e) => {
     e.preventDefault()
-    //
-    console.log(e.target.className)
-    console.log(e.target)
-    //
     mixSpan()
     root.classList.toggle('light')
     if (Array.from(root.classList).includes('light')) {
@@ -61,41 +57,39 @@ function createIcon(theme, theme2) {
     )
 }
 
-console.log(toggleColorTheme.children)
+// function mixSpan() {
+//     //
+//     // for (let i = toggleColorTheme.children.length - 2; i >= 0; i--) {
+//     //     toggleColorTheme.appendChild(toggleColorTheme.children[i])
+//     // }
+//     let A = Array.from(toggleColorTheme.children)
+//     console.log(A[0].className)
+// }
 
-function mixSpan() {
-    //
-    // for (let i = toggleColorTheme.children.length - 2; i >= 0; i--) {
-    //     toggleColorTheme.appendChild(toggleColorTheme.children[i])
-    // }
-    let A = Array.from(toggleColorTheme.children)
-    console.log(A[0].className)
-}
+// // клик
+// // добавляем класс для анимации
+// // проверяем класс первого спана
+// // создаем спан с таким же классом в конце (переносим первый спан в конец)
+// //
 
-// клик
-// добавляем класс для анимации
-// проверяем класс первого спана
-// создаем спан с таким же классом в конце (переносим первый спан в конец)
-//
+// function mouseEnter(e) {
+//     console.log(e.type)
+//     if (e.type == 'mouseenter') {
+//         e.target.classList.add('hover')
+//     } else {
+//         toggleColorTheme.classList.toggle('dada')
+//     }
+//     // toggleColorTheme.addEventListener('mouseleave', (e) => {
+//     //     console.log(e)
+//     //     console.log(e.type)
+//     // })
+//     e.target.classList.toggle('hover')
+// }
+// // mouseEnter()
 
-function mouseEnter(e) {
-    console.log(e.type)
-    if (e.type == 'mouseenter') {
-        e.target.classList.add('hover')
-    } else {
-        toggleColorTheme.classList.toggle('dada')
-    }
-    // toggleColorTheme.addEventListener('mouseleave', (e) => {
-    //     console.log(e)
-    //     console.log(e.type)
-    // })
-    e.target.classList.toggle('hover')
-}
-// mouseEnter()
-
-toggleColorTheme.addEventListener('mouseenter', mouseEnter)
-toggleColorTheme.addEventListener('mouseleave', mouseEnter)
-toggleColorTheme.addEventListener('click', mouseEnter)
+// toggleColorTheme.addEventListener('mouseenter', mouseEnter)
+// toggleColorTheme.addEventListener('mouseleave', mouseEnter)
+// toggleColorTheme.addEventListener('click', mouseEnter)
 //
 //
 //
