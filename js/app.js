@@ -7416,6 +7416,9 @@ PERFORMANCE OF THIS SOFTWARE.
         function createIcon(theme, theme2) {
             toggleColorTheme.insertAdjacentHTML("beforeend", `<span class="_icon-${theme}" ></span>\n    <span class="_icon-${theme2} is-selected"></span>`);
         }
+        function mixSpan() {
+            Array.from(toggleColorTheme.children);
+        }
         const script_button = document.querySelector("#toggleColorTheme");
         let slides = [ ...script_button.children ];
         script_button.prepend(slides[slides.length - 1]);
