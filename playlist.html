@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231128231200">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231128235545">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -218,13 +218,18 @@
 						alert("check4");
 						const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 40;
 						alert(intervalDelayCuonter)
+						alert("check4.1")
 						let imagesLoadedCount = counter = progress = 0;
 						htmlDocument.classList.add('loading');
 						htmlDocument.classList.add('lock');
 						alert(htmlDocument.classList);
+						alert(htmlDocument.classList);
+						window.addEventListener('DOMContentLoaded', function() {
+							alert("domload")
+						})
 						window.addEventListener("load", () => {
 							htmlDocument.classList.add('download-done')
-							alert("check4.1")
+							alert("check4.2")
 						});
 						preloaderImages.forEach(preloaderImage => {
 							const imgClone = document.createElement('img');
@@ -256,6 +261,7 @@
 
 						function addLoadedClass() {
 							if (this.isRun == true) return;
+
 							this.isRun = true;
 
 							let timer = setInterval(() => {
@@ -680,7 +686,7 @@
 			</div>
 		</div>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231128231200"></script>
+	<script data-main-script src="js/app.min.js?_v=20231128235545"></script>
 </body>
 
 </html>
