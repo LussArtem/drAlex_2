@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231127133352">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231128142444">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -221,11 +221,6 @@
 								imgClone.onerror = imageLoaded;
 								preloaderImage.dataset.srcset ? imgClone.src = preloaderImage.dataset.srcset : imgClone.src = preloaderImage.srcset;
 							}
-							// console.log(imgClone.srcset);
-							// console.log(imgClone)
-							// console.log(preloaderImage)
-							// console.log(preloaderImage.dataset.src)
-							console.log(preloaderImage.dataset.srcset)
 						});
 
 
@@ -369,12 +364,12 @@
 						<source srcset="img/mainscreen/03.webp" type="image/webp">
 						<img data-prlx-mouse data-prlx-dyr src="img/user.png" data-src="img/mainscreen/03.jpg" alt="*" class="mainscreen__img mainscreen__img-6">
 					</picture>
-					<div class="mainscreen__bg">
-						<img src="img/decor.svg" alt="*" class="mainscreen__decor elem">
+					<div class="page-bg">
+						<img src="img/decor.svg" alt="*" class="page-bg__decor elem">
 					</div>
 					<div class="mainscreen__content">
 						<h1 class="mainscreen__title">
-							Получи <span>INVITE</span>
+							П<span class="plus _icon-eye">o</span>лучи <span>INVITE</span>
 						</h1>
 						<button aria-label="Купить INVITE" data-goto=".types" type="button" class="mainscreen__button button button-inverse">
 							Купить INVITE
@@ -553,7 +548,7 @@
 									<picture>
 
 										<source srcset="img/ivent/2.webp" type="image/webp">
-										<img src="img/user.png" data-src="img/ivent/2.png" alt="direct printing" />
+										<img src="img/user.png" data-src="img/ivent/2.png" alt="direct printing">
 									</picture>
 								</div>
 								<div class="item-types__footer">
@@ -598,10 +593,10 @@
 					<div class="works__header printing__header header-printing">
 						<h2 class="header-printing__title section-title">Галерея INVITE / Наши фото и видео</h2>
 					</div>
+					<div class="page-bg">
+						<img src="img/decor.svg" alt="*" class="page-bg__decor elem">
+					</div>
 					<div class="works__body swiper">
-						<div class="mainscreen__bg works__decor">
-							<img src="img/decor.svg" alt="*" class="mainscreen__decor elem">
-						</div>
 						<div class="works__inner swiper-wrapper">
 							<div class="works__slide swiper-slide">
 								<div class="works__img">
@@ -1087,12 +1082,12 @@
 			</section>
 			<section id="order" class="order">
 				<div class="order__container">
-					<div class="mainscreen__bg works__decor">
-						<img src="img/decor.svg" alt="*" class="mainscreen__decor elem">
+					<div class="page-bg">
+						<img src="img/decor.svg" alt="*" class="page-bg__decor elem">
 					</div>
 					<div class="order__body">
 						<h2 class="order__title">
-							П<span class="plus _icon-plus">o</span>лучи<span class="color">INVITE</span><span class="img-1 _icon-shirt "></span>сейчас
+							П<span class="plus _icon-plus">o</span>лучи<span class="color">INVITE</span><span class="img-1 _icon-mail"></span>сейча<span class="plus _icon-rocket">c</span>
 						</h2>
 						<button aria-label="Получить приглашение" data-popup="#calculate" type="button" class="order__button button button-inverse">Получить
 							приглашение
@@ -1336,7 +1331,7 @@
 			</div>
 		</div>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231127133352"></script>
+	<script data-main-script src="js/app.min.js?_v=20231128142444"></script>
 </body>
 
 </html>

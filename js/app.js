@@ -7402,8 +7402,6 @@ PERFORMANCE OF THIS SOFTWARE.
         const currentTheme = localStorage.getItem("theme");
         toggleColorTheme.addEventListener("click", (e => {
             e.preventDefault();
-            console.log(e.target.className);
-            console.log(e.target);
             mixSpan();
             root.classList.toggle("light");
             if (Array.from(root.classList).includes("light")) localStorage.setItem("theme", "light"); else localStorage.setItem("theme", "dark");
@@ -7418,19 +7416,6 @@ PERFORMANCE OF THIS SOFTWARE.
         function createIcon(theme, theme2) {
             toggleColorTheme.insertAdjacentHTML("beforeend", `<span class="_icon-${theme}" ></span>\n    <span class="_icon-${theme2} is-selected"></span>`);
         }
-        console.log(toggleColorTheme.children);
-        function mixSpan() {
-            let A = Array.from(toggleColorTheme.children);
-            console.log(A[0].className);
-        }
-        function mouseEnter(e) {
-            console.log(e.type);
-            if (e.type == "mouseenter") e.target.classList.add("hover"); else toggleColorTheme.classList.toggle("dada");
-            e.target.classList.toggle("hover");
-        }
-        toggleColorTheme.addEventListener("mouseenter", mouseEnter);
-        toggleColorTheme.addEventListener("mouseleave", mouseEnter);
-        toggleColorTheme.addEventListener("click", mouseEnter);
         const script_button = document.querySelector("#toggleColorTheme");
         let slides = [ ...script_button.children ];
         script_button.prepend(slides[slides.length - 1]);

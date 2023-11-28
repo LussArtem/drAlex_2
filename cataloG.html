@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231127133352">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231128142444">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -221,11 +221,6 @@
 								imgClone.onerror = imageLoaded;
 								preloaderImage.dataset.srcset ? imgClone.src = preloaderImage.dataset.srcset : imgClone.src = preloaderImage.srcset;
 							}
-							// console.log(imgClone.srcset);
-							// console.log(imgClone)
-							// console.log(preloaderImage)
-							// console.log(preloaderImage.dataset.src)
-							console.log(preloaderImage.dataset.srcset)
 						});
 
 
@@ -675,12 +670,12 @@
 			</section>
 			<section id="order" class="order">
 				<div class="order__container">
-					<div class="mainscreen__bg works__decor">
-						<img src="img/decor.svg" alt="*" class="mainscreen__decor elem">
+					<div class="page-bg">
+						<img src="img/decor.svg" alt="*" class="page-bg__decor elem">
 					</div>
 					<div class="order__body">
 						<h2 class="order__title">
-							П<span class="plus _icon-plus">o</span>лучи<span class="color">INVITE</span><span class="img-1 _icon-shirt "></span>сейчас
+							П<span class="plus _icon-plus">o</span>лучи<span class="color">INVITE</span><span class="img-1 _icon-mail"></span>сейча<span class="plus _icon-rocket">c</span>
 						</h2>
 						<button aria-label="Получить приглашение" data-popup="#calculate" type="button" class="order__button button button-inverse">Получить
 							приглашение
@@ -923,7 +918,7 @@
 			</div>
 		</div>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231127133352"></script>
+	<script data-main-script src="js/app.min.js?_v=20231128142444"></script>
 </body>
 
 </html>
