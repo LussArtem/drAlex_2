@@ -57,14 +57,14 @@ function createIcon(theme, theme2) {
     )
 }
 
-// function mixSpan() {
-//     //
-//     // for (let i = toggleColorTheme.children.length - 2; i >= 0; i--) {
-//     //     toggleColorTheme.appendChild(toggleColorTheme.children[i])
-//     // }
-//     let A = Array.from(toggleColorTheme.children)
-//     console.log(A[0].className)
-// }
+function mixSpan() {
+    //
+    // for (let i = toggleColorTheme.children.length - 2; i >= 0; i--) {
+    //     toggleColorTheme.appendChild(toggleColorTheme.children[i])
+    // }
+    let A = Array.from(toggleColorTheme.children)
+    console.log(A[0].className)
+}
 
 // // клик
 // // добавляем класс для анимации
