@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231129005823">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231201000600">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -211,43 +211,25 @@
 					let preloaderImages = document.querySelectorAll('source, video');
 					// TO-DO img preloader
 					const preloaderStyle = document.querySelector('.preloader-style');
-					alert("check3", preloaderImages.length);
-					alert("check3", preloaderStyle);
-					console.log(preloaderStyle);
 					if (preloaderImages.length) {
-						alert("check4");
 						const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 40;
-						alert(intervalDelayCuonter)
-						alert("check4.1")
 						let imagesLoadedCount = counter = progress = 0;
 						htmlDocument.classList.add('loading');
 						htmlDocument.classList.add('lock');
-						alert(htmlDocument.classList);
-						alert(htmlDocument.classList);
+						// FIX for mobile browsers
 						if (document.readyState === 'loading') {
-							alert('document is already ready, just execute code here');
-							window.addEventListener("load", () => {
-								htmlDocument.classList.add('download-done')
-								alert("check4.2")
-							});
+							console.log('document is already ready, just execute code here');
+							htmlDocument.classList.add('download-done')
 
 						} else if (document.readyState === 'complete') {
-							alert('document was not ready, place code here');
+							console.log('document was not ready, place code here');
 							htmlDocument.classList.add('download-done');
-
 
 						} else {
 							htmlDocument.classList.add('download-done');
-							alert('Страница уже загружена и DOM дерево построено, но дополнительные ресурсы, такие как изображения и iframe (en-US), все ещё загружаются.')
+							console.log('Страница уже загружена и DOM дерево построено, но дополнительные ресурсы, такие как изображения и iframe (en-US), все ещё загружаются.')
 						}
-						// window.addEventListener('DOMContentLoaded', function () {
-						// 	alert("domload")
-						// })
-						// window.addEventListener("load", () => {
-						// 	htmlDocument.classList.add('download-done')
-						// 	alert("check4.2")
-						// }
-						// );
+
 						preloaderImages.forEach(preloaderImage => {
 							const imgClone = document.createElement('img');
 							if (imgClone) {
@@ -283,19 +265,15 @@
 
 							let timer = setInterval(() => {
 								if (htmlDocument.closest('.download-done')) {
-									alert("check5");
 									htmlDocument.classList.remove('lock');
 									htmlDocument.classList.remove('loading');
 									setTimeout(() => {
-										alert("check6");
 										htmlDocument.classList.remove('download-done');
 										htmlDocument.classList.add('loaded');
 									}, settings.delayRemovePreloader >= 500 ? settings.delayRemovePreloader - 500 : 0);
 									const intervalRemovePreloader = setInterval(() => {
 										preloader.remove();
-										alert("check10");
 										if (preloaderStyle) {
-											alert("check7");
 											preloaderStyle.remove();
 										}
 										clearInterval(intervalRemovePreloader);
@@ -310,10 +288,8 @@
 						}
 					} else {
 						if (preloaderStyle) {
-							alert("check8");
 							preloaderStyle.remove();
 						}
-						alert("check9");
 						preloaderContainer.remove();
 					}
 				}
@@ -1371,7 +1347,7 @@
 			</div>
 		</div>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231129005823"></script>
+	<script data-main-script src="js/app.min.js?_v=20231201000600"></script>
 </body>
 
 </html>

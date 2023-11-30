@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231129005823">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231201000600">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -211,43 +211,25 @@
 					let preloaderImages = document.querySelectorAll('source, video');
 					// TO-DO img preloader
 					const preloaderStyle = document.querySelector('.preloader-style');
-					alert("check3", preloaderImages.length);
-					alert("check3", preloaderStyle);
-					console.log(preloaderStyle);
 					if (preloaderImages.length) {
-						alert("check4");
 						const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 40;
-						alert(intervalDelayCuonter)
-						alert("check4.1")
 						let imagesLoadedCount = counter = progress = 0;
 						htmlDocument.classList.add('loading');
 						htmlDocument.classList.add('lock');
-						alert(htmlDocument.classList);
-						alert(htmlDocument.classList);
+						// FIX for mobile browsers
 						if (document.readyState === 'loading') {
-							alert('document is already ready, just execute code here');
-							window.addEventListener("load", () => {
-								htmlDocument.classList.add('download-done')
-								alert("check4.2")
-							});
+							console.log('document is already ready, just execute code here');
+							htmlDocument.classList.add('download-done')
 
 						} else if (document.readyState === 'complete') {
-							alert('document was not ready, place code here');
+							console.log('document was not ready, place code here');
 							htmlDocument.classList.add('download-done');
-
 
 						} else {
 							htmlDocument.classList.add('download-done');
-							alert('Страница уже загружена и DOM дерево построено, но дополнительные ресурсы, такие как изображения и iframe (en-US), все ещё загружаются.')
+							console.log('Страница уже загружена и DOM дерево построено, но дополнительные ресурсы, такие как изображения и iframe (en-US), все ещё загружаются.')
 						}
-						// window.addEventListener('DOMContentLoaded', function () {
-						// 	alert("domload")
-						// })
-						// window.addEventListener("load", () => {
-						// 	htmlDocument.classList.add('download-done')
-						// 	alert("check4.2")
-						// }
-						// );
+
 						preloaderImages.forEach(preloaderImage => {
 							const imgClone = document.createElement('img');
 							if (imgClone) {
@@ -283,19 +265,15 @@
 
 							let timer = setInterval(() => {
 								if (htmlDocument.closest('.download-done')) {
-									alert("check5");
 									htmlDocument.classList.remove('lock');
 									htmlDocument.classList.remove('loading');
 									setTimeout(() => {
-										alert("check6");
 										htmlDocument.classList.remove('download-done');
 										htmlDocument.classList.add('loaded');
 									}, settings.delayRemovePreloader >= 500 ? settings.delayRemovePreloader - 500 : 0);
 									const intervalRemovePreloader = setInterval(() => {
 										preloader.remove();
-										alert("check10");
 										if (preloaderStyle) {
-											alert("check7");
 											preloaderStyle.remove();
 										}
 										clearInterval(intervalRemovePreloader);
@@ -310,10 +288,8 @@
 						}
 					} else {
 						if (preloaderStyle) {
-							alert("check8");
 							preloaderStyle.remove();
 						}
-						alert("check9");
 						preloaderContainer.remove();
 					}
 				}
@@ -401,12 +377,12 @@
 						<div class="masonry__item" src="img/user.png" data-src="img/portfolio/28.jpg" data-width="1000" data-height="2000">
 							<div class="masonry__cover" style="background-image: url(img/portfolio/28.jpg);">
 							</div>
-							<img class="masonry__image" src="img/user.png" data-src="img/portfolio/28.jpg" alt="*">
+							<picture><source data-srcset="img/portfolio/28.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  class="masonry__image" src="img/user.png" data-src="img/portfolio/28.jpg" alt="*"></picture>
 						</div>
 						<div class="masonry__item" src="img/user.png" data-src="img/portfolio/28.jpg" data-width="1000" data-height="2000">
 							<div class="masonry__cover" style="background-image: url(img/portfolio/28.jpg);">
 							</div>
-							<img class="masonry__image" src="img/user.png" data-src="img/portfolio/28.jpg" alt="*">
+							<picture><source data-srcset="img/portfolio/28.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  class="masonry__image" src="img/user.png" data-src="img/portfolio/28.jpg" alt="*"></picture>
 						</div>
 						<div class="masonry__item" src="img/user.png" data-src="img/portfolio/28.jpg" data-width="1000" data-height="400">
 							<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1523164468&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
@@ -451,7 +427,7 @@
 							<video src="files/01.mp4" width="100%" height="100%" class="hero__video-el" id="heroVideo" muted playsinline poster="img/portfolio/28.jpg" autoplay loop>
 								<source src="files/01.mp4" type="video/mp4">
 							</video>
-							<img class="masonry__image" src="img/user.png" data-src="img/portfolio/28.jpg" alt="*">
+							<picture><source data-srcset="img/portfolio/28.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  class="masonry__image" src="img/user.png" data-src="img/portfolio/28.jpg" alt="*"></picture>
 						</div>
 						<div class="masonry__item" data-width="1000" data-height="2000" style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
 							<a href="https://soundcloud.com/user-823574471" title="Huntsman" target="_blank" style="color: #cccccc; text-decoration: none;">Huntsman</a> · <a href="https://soundcloud.com/user-823574471/huntsman-mix-set-invite-birthday-080523" title="Huntsman mix set INVITE BIRTHDAY 08.05.23" target="_blank" style="color: #cccccc; text-decoration: none;">Huntsman mix set INVITE BIRTHDAY 08.05.23</a>
@@ -703,7 +679,7 @@
 			</div>
 		</div>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231129005823"></script>
+	<script data-main-script src="js/app.min.js?_v=20231201000600"></script>
 </body>
 
 </html>
