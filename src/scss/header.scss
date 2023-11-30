@@ -56,7 +56,6 @@
         // border: 1px solid var(--accent);
         border: 1px solid var(--text-accent);
         font-size: $fontSize;
-        font-family: stolzl_regular;
         text-align: center;
         // color: var(--accent);
         color: var(--text-accent);
@@ -74,24 +73,6 @@
         span.is-selected ~ span {
             transform: translateY(100%);
         }
-        // &:hover span {
-        //     // transform: translateY(-4px);
-        // }
-        // span {
-        //     transform: translateY(16px);
-        //     transition: transform 0.3s ease 0s;
-
-        //     // &::after {
-        //     //     padding-top: 10px;
-        //     // }
-        //     &:nth-last-child(1) {
-        //         padding-top: 6px;
-        //     }
-        // }
-        // &.hover span {
-        //     transform: translateY(-4px);
-        //     transition: transform 0.3s ease 0s;
-        // }
     }
 
     &__phone {
@@ -157,6 +138,13 @@
 .icon-menu {
     display: none;
 }
+._icon-night {
+    color: var(--bg-primary);
+}
+._icon-sun {
+    color: var(--bg-accent);
+}
+
 //====================================================================================================
 
 //Burger
