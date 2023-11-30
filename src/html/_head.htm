@@ -181,7 +181,6 @@
 				},
 			};
 			const checkBodyinterval = setInterval(() => {
-				alert("check1");
 				if (document.body) {
 					clearInterval(checkBodyinterval);
 					const preloaderTemplate = `
@@ -201,7 +200,6 @@
 				}
 			}, 10);
 			const checkScriptsInterval = setInterval(() => {
-				alert("check2");
 				const mainScriptsTag = document.querySelector('[data-main-script]');
 				if (mainScriptsTag) {
 
