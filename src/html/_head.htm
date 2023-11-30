@@ -181,6 +181,7 @@
 				},
 			};
 			const checkBodyinterval = setInterval(() => {
+				alert("check1");
 				if (document.body) {
 					clearInterval(checkBodyinterval);
 					const preloaderTemplate = `
@@ -200,8 +201,10 @@
 				}
 			}, 10);
 			const checkScriptsInterval = setInterval(() => {
+				alert("check2");
 				const mainScriptsTag = document.querySelector('[data-main-script]');
 				if (mainScriptsTag) {
+
 					clearInterval(checkScriptsInterval);
 					let preloaderImages = document.querySelectorAll('source, video');
 					// TO-DO img preloader
@@ -211,10 +214,24 @@
 						let imagesLoadedCount = counter = progress = 0;
 						htmlDocument.classList.add('loading');
 						htmlDocument.classList.add('lock');
-						window.addEventListener("load", () => htmlDocument.classList.add('download-done'));
+						// FIX for mobile browsers
+						if (document.readyState === 'loading') {
+							console.log('document is already ready, just execute code here');
+							htmlDocument.classList.add('download-done')
+
+						} else if (document.readyState === 'complete') {
+							console.log('document was not ready, place code here');
+							htmlDocument.classList.add('download-done');
+
+						} else {
+							htmlDocument.classList.add('download-done');
+							console.log('Страница уже загружена и DOM дерево построено, но дополнительные ресурсы, такие как изображения и iframe (en-US), все ещё загружаются.')
+						}
+
 						preloaderImages.forEach(preloaderImage => {
 							const imgClone = document.createElement('img');
 							if (imgClone) {
+
 								imgClone.onload = imageLoaded;
 								imgClone.onerror = imageLoaded;
 								preloaderImage.dataset.srcset ? imgClone.src = preloaderImage.dataset.srcset : imgClone.src = preloaderImage.srcset;
@@ -241,19 +258,18 @@
 
 						function addLoadedClass() {
 							if (this.isRun == true) return;
+
 							this.isRun = true;
 
 							let timer = setInterval(() => {
 								if (htmlDocument.closest('.download-done')) {
 									htmlDocument.classList.remove('lock');
 									htmlDocument.classList.remove('loading');
-									htmlDocument.classList.add('preload-animation');
 									setTimeout(() => {
 										htmlDocument.classList.remove('download-done');
 										htmlDocument.classList.add('loaded');
 									}, settings.delayRemovePreloader >= 500 ? settings.delayRemovePreloader - 500 : 0);
 									const intervalRemovePreloader = setInterval(() => {
-										htmlDocument.classList.remove('preload-animation');
 										preloader.remove();
 										if (preloaderStyle) {
 											preloaderStyle.remove();
