@@ -54,12 +54,12 @@
         align-items: center;
         clip-path: border-box;
         // border: 1px solid var(--accent);
-        border: 1px solid var(--text-accent);
+        border: 2px solid var(--text-accent);
         font-size: $fontSize;
         text-align: center;
         // color: var(--accent);
         color: var(--text-accent);
-        transition: border-color 0.3s ease 0s, color 0.3s ease 0s, transform 0.3s ease 0s;
+        transition: border-color 0.3s ease 0s, color 0.3s ease 0s, transform 0.3s ease 0s, background-color 0.3s ease 0s;
         span {
             position: relative;
             top: 12px;
