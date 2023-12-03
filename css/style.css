@@ -1807,9 +1807,11 @@ body::after {
 
 .cursor__shadow {
   will-change: transform;
-  -webkit-transition: all 0.05s linear 0s;
-  -o-transition: all 0.05s linear 0s;
-  transition: all 0.05s linear 0s;
+  -webkit-transition: color 1.3s linear 0s, -webkit-transform 0.1s linear 0s, -webkit-box-shadow 1.3s linear 0s;
+  transition: color 1.3s linear 0s, -webkit-transform 0.1s linear 0s, -webkit-box-shadow 1.3s linear 0s;
+  -o-transition: transform 0.1s linear 0s, box-shadow 1.3s linear 0s, color 1.3s linear 0s;
+  transition: transform 0.1s linear 0s, box-shadow 1.3s linear 0s, color 1.3s linear 0s;
+  transition: transform 0.1s linear 0s, box-shadow 1.3s linear 0s, color 1.3s linear 0s, -webkit-transform 0.1s linear 0s, -webkit-box-shadow 1.3s linear 0s;
   position: fixed;
   width: 3.125rem;
   height: 3.125rem;
@@ -1832,6 +1834,7 @@ body::after {
   height: 0.3125rem;
   top: 0;
   left: 0;
+  will-change: transform;
 }
 
 .cursor__pointer::after {
@@ -1842,9 +1845,11 @@ body::after {
   background-color: var(--secondary);
   left: calc(50% - 0.3125rem / 2);
   top: calc(50% - 0.3125rem / 2);
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  -webkit-transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+  -o-transition: background-color 0.3s ease 0s, transform 0.3s ease 0s, border-color 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s, transform 0.3s ease 0s, border-color 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s, transform 0.3s ease 0s, border-color 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
   border-radius: 50%;
 }
 
@@ -2086,16 +2091,15 @@ body::after {
           align-items: center;
   -webkit-clip-path: border-box;
           clip-path: border-box;
-  border: 1px solid var(--text-accent);
+  border: 2px solid var(--text-accent);
   font-size: 1.5rem;
-  font-family: stolzl_regular;
   text-align: center;
   color: var(--text-accent);
-  -webkit-transition: border-color 0.3s ease 0s, color 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
-  transition: border-color 0.3s ease 0s, color 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
-  -o-transition: border-color 0.3s ease 0s, color 0.3s ease 0s, transform 0.3s ease 0s;
-  transition: border-color 0.3s ease 0s, color 0.3s ease 0s, transform 0.3s ease 0s;
-  transition: border-color 0.3s ease 0s, color 0.3s ease 0s, transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+  -webkit-transition: border-color 0.3s ease 0s, color 0.3s ease 0s, background-color 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+  transition: border-color 0.3s ease 0s, color 0.3s ease 0s, background-color 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+  -o-transition: border-color 0.3s ease 0s, color 0.3s ease 0s, transform 0.3s ease 0s, background-color 0.3s ease 0s;
+  transition: border-color 0.3s ease 0s, color 0.3s ease 0s, transform 0.3s ease 0s, background-color 0.3s ease 0s;
+  transition: border-color 0.3s ease 0s, color 0.3s ease 0s, transform 0.3s ease 0s, background-color 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
 }
 
 .header__toggle-color span {
@@ -2185,6 +2189,14 @@ body::after {
 
 .icon-menu {
   display: none;
+}
+
+._icon-night {
+  color: var(--bg-primary);
+}
+
+._icon-sun {
+  color: var(--bg-accent);
 }
 
 /*
@@ -2395,6 +2407,8 @@ body::after {
   content: "";
   display: block;
   background: url("../img/icon/arrow-right.svg") right no-repeat;
+  fill: var(--inverse);
+  stroke: var(--inverse);
   width: 4px;
   height: 4px;
 }
@@ -8913,7 +8927,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .header__toggle-color:hover {
     background-color: var(--accent);
-    color: #000;
   }
 
   .header__social li a:hover {

@@ -1092,11 +1092,22 @@
                     } else if (e.type === "mousedown") cursor.classList.add("_active"); else if (e.type === "mouseup") cursor.classList.remove("_active");
                     cursorPointer ? cursorPointer.style.transform = `translate3d(${e.clientX - cursorPointerStyle.width / 2}px, ${e.clientY - cursorPointerStyle.height / 2}px, 0)` : null;
                     cursorShadow ? cursorShadow.style.transform = `translate3d(${e.clientX - cursorShadowStyle.width / 2}px, ${e.clientY - cursorShadowStyle.height / 2}px, 0)` : null;
-                    requestAnimationFrame(mouseActions);
                 }
-                window.addEventListener("mouseup", mouseActions);
-                window.addEventListener("mousedown", mouseActions);
-                window.addEventListener("mousemove", mouseActions);
+                function throttle(callee, timeout) {
+                    let timer = null;
+                    return function perform(...args) {
+                        if (timer) return;
+                        timer = setTimeout((() => {
+                            callee(...args);
+                            clearTimeout(timer);
+                            timer = null;
+                        }), timeout);
+                    };
+                }
+                const throttleMove = throttle(mouseActions, 5);
+                window.addEventListener("mouseup", throttleMove);
+                window.addEventListener("mousedown", throttleMove);
+                window.addEventListener("mousemove", throttleMove);
                 window.addEventListener("mouseout", mouseActions);
             }
         }
@@ -1426,7 +1437,7 @@
                         const distY = coordYprocent - positionY;
                         positionX += distX * paramAnimation / 1e3;
                         positionY += distY * paramAnimation / 1e3;
-                        el.style.cssText = `transform: translate3D(${directionX * positionX / (paramСoefficientX / 10)}%,${directionY * positionY / (paramСoefficientY / 10)}%,0) rotate(0.02deg);`;
+                        el.style.cssText = `transform: translate3D(${directionX * positionX / (paramСoefficientX / 10)}%,${directionY * positionY / (paramСoefficientY / 10)}%,0) rotate(0.1deg);`;
                         requestAnimationFrame(setMouseParallaxStyle);
                     }
                     function mouseMoveParalax(wrapper = window) {
@@ -7446,7 +7457,7 @@ PERFORMANCE OF THIS SOFTWARE.
         addLoadedClass();
         menuInit();
         tabs();
-        customCursor(true, true);
+        customCursor(true);
         pageNavigation();
     })();
 })();
