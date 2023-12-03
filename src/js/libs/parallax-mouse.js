@@ -84,7 +84,7 @@ class MousePRLX {
                 positionY = positionY + (distY * paramAnimation) / 1000
                 el.style.cssText = `transform: translate3D(${(directionX * positionX) / (paramСoefficientX / 10)}%,${
                     (directionY * positionY) / (paramСoefficientY / 10)
-                }%,0) rotate(0.02deg);`
+                }%,0) rotate(0.1deg);`
                 requestAnimationFrame(setMouseParallaxStyle)
             }
             function mouseMoveParalax(wrapper = window) {

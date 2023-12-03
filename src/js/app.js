@@ -69,7 +69,7 @@ flsFunctions.tabs()
 Документация:
 Сниппет (HTML):
 */
-flsFunctions.customCursor(true, true)
+flsFunctions.customCursor(true)
 
 /*
 Модуль "Попапи"

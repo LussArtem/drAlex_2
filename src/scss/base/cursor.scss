@@ -11,7 +11,7 @@
     z-index: 10000;
     &__shadow {
         will-change: transform;
-        transition: all 0.05s linear 0s;
+        transition: transform 0.1s linear 0s, box-shadow 1.3s linear 0s, color 1.3s linear 0s;
         position: fixed;
         width: rem(50);
         height: rem(50);
@@ -41,6 +41,7 @@
         height: rem(5);
         top: 0;
         left: 0;
+        will-change: transform;
         &::after {
             content: '';
             position: absolute;
@@ -50,7 +51,7 @@
             left: calc(50% - rem(5) / 2);
             top: calc(50% - rem(5) / 2);
             // border: 4px solid var(--secondary);
-            transition: all 0.3s ease 0s;
+            transition: background-color 0.3s ease 0s, transform 0.3s ease 0s, border-color 0.3s ease 0s;
             border-radius: 50%;
             // TODO FIX CIRCLE
         }

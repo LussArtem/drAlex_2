@@ -652,13 +652,7 @@ export function customCursor(isShadowTrue) {
                 height: cursorShadow.offsetHeight,
             }
         }
-        // test
-        // let cursorInterective
-        // if (isInterective) {
-        //     window.onmousemove = (e) => {
-        //         ;(cursorInterective = e.target.closest('.cursor__interective')), (cursorInterective = cursorInterective !== null)
-        //     }
-        // }
+
         function mouseActions(e) {
             if (e.type === 'mouseout') {
                 cursor.style.opacity = 0
@@ -690,13 +684,42 @@ export function customCursor(isShadowTrue) {
                       e.clientY - cursorShadowStyle.height / 2
                   }px, 0)`)
                 : null
-            requestAnimationFrame(mouseActions)
         }
+        function throttle(callee, timeout) {
+            // Таймер будет определять,
+            // надо ли нам пропускать текущий вызов.
+            let timer = null
 
-        window.addEventListener('mouseup', mouseActions)
-        window.addEventListener('mousedown', mouseActions)
-        window.addEventListener('mousemove', mouseActions)
+            // Как результат возвращаем другую функцию.
+            // Это нужно, чтобы мы могли не менять другие части кода,
+            // чуть позже мы увидим, как это помогает.
+            return function perform(...args) {
+                // Если таймер есть, то функция уже была вызвана,
+                // и значит новый вызов следует пропустить.
+                if (timer) return
+
+                // Если таймера нет, значит мы можем вызвать функцию:
+                timer = setTimeout(() => {
+                    // Аргументы передаём неизменными в функцию-аргумент:
+                    callee(...args)
+
+                    // По окончании очищаем таймер:
+                    clearTimeout(timer)
+                    timer = null
+                }, timeout)
+            }
+        }
+        const throttleMove = throttle(mouseActions, 5)
+
+        window.addEventListener('mouseup', throttleMove)
+        window.addEventListener('mousedown', throttleMove)
+        window.addEventListener('mousemove', throttleMove)
         window.addEventListener('mouseout', mouseActions)
+
+        // window.addEventListener('mouseup', mouseActions)
+        // window.addEventListener('mousedown', mouseActions)
+        // window.addEventListener('mousemove', mouseActions)
+        // window.addEventListener('mouseout', mouseActions)
     }
 }
 //================================================================================================================================================================================================================================================================================================================

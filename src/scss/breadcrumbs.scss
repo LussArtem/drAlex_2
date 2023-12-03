@@ -21,6 +21,8 @@
                     content: '';
                     display: block;
                     background: url('../img/icon/arrow-right.svg') right no-repeat;
+                    fill: var(--inverse);
+                    stroke: var(--inverse);
                     width: 4px;
                     height: 4px;
                 }
