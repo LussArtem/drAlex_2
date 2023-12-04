@@ -1115,7 +1115,8 @@ textarea.input {
   color-scheme: dark;
   --primary: #141414;
   --secondary: #d3d3d3;
-  --accent: #be3455;
+  --accent-old: #be3455;
+  --accent: #c8466a;
   --extra: #bb2649;
   --inverse: #f2f6ff;
   --bg-primary: #242423;
