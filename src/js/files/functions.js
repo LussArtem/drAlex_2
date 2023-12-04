@@ -714,7 +714,7 @@ export function customCursor(isShadowTrue) {
         window.addEventListener('mouseup', throttleMove)
         window.addEventListener('mousedown', throttleMove)
         window.addEventListener('mousemove', throttleMove)
-        window.addEventListener('mouseout', mouseActions)
+        window.addEventListener('mouseout', throttleMove)
 
         // window.addEventListener('mouseup', mouseActions)
         // window.addEventListener('mousedown', mouseActions)

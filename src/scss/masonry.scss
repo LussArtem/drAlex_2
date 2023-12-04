@@ -29,10 +29,7 @@
     }
     &__title {
         position: relative;
-        @include adaptiveValue('margin-bottom', 25, 10, 0);
-        // @media (max-width: em(1200)) and (min-width: em(992)) {
-        //     top: rem(16);
-        // }
+        // @include adaptiveValue('margin-bottom', 25, 10, 0);
     }
 }
 
