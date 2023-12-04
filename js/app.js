@@ -1108,7 +1108,7 @@
                 window.addEventListener("mouseup", throttleMove);
                 window.addEventListener("mousedown", throttleMove);
                 window.addEventListener("mousemove", throttleMove);
-                window.addEventListener("mouseout", mouseActions);
+                window.addEventListener("mouseout", throttleMove);
             }
         }
         function functions_FLS(message) {
