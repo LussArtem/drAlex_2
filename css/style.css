@@ -1707,13 +1707,13 @@ body::after {
           align-items: center;
   text-align: center;
   position: relative;
-  max-width: 99%;
+  max-width: 106%;
   margin-left: auto;
   margin-right: auto;
   -webkit-mask: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(10%, white), color-stop(90%, white), to(transparent));
   -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
-  mask: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, white), color-stop(80%, white), to(transparent));
-  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  mask: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(10%, white), color-stop(90%, white), to(transparent));
+  mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
 }
 
 .page__text-item {
@@ -2517,6 +2517,8 @@ body::after {
   grid-template-columns: repeat(3, 1fr);
   position: relative;
   z-index: 2;
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
 }
 
 .can__column {
@@ -6204,6 +6206,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .can__body {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .can__body ul:not(:first-child) {
+    display: none;
   }
 
   .catalog__breadcrumbs {
