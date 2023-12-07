@@ -7413,7 +7413,7 @@ PERFORMANCE OF THIS SOFTWARE.
         const currentTheme = localStorage.getItem("theme");
         toggleColorTheme.addEventListener("click", (e => {
             e.preventDefault();
-            mixSpan();
+            Array.from(toggleColorTheme.children);
             root.classList.toggle("light");
             if (Array.from(root.classList).includes("light")) localStorage.setItem("theme", "light"); else localStorage.setItem("theme", "dark");
         }));
@@ -7427,9 +7427,6 @@ PERFORMANCE OF THIS SOFTWARE.
         function createIcon(theme, theme2) {
             toggleColorTheme.insertAdjacentHTML("beforeend", `<span class="_icon-${theme}" ></span>\n    <span class="_icon-${theme2} is-selected"></span>`);
         }
-        function mixSpan() {
-            Array.from(toggleColorTheme.children);
-        }
         const script_button = document.querySelector("#toggleColorTheme");
         let slides = [ ...script_button.children ];
         script_button.prepend(slides[slides.length - 1]);
@@ -7439,14 +7436,9 @@ PERFORMANCE OF THIS SOFTWARE.
                 const currSlide = script_button.querySelector(".is-selected");
                 currSlide.classList.remove("is-selected");
                 let targetSlide;
-                if (arrow.classList.contains("jsPrev")) {
-                    targetSlide = currSlide.previousElementSibling;
-                    script_button.prepend(slides[slides.length - 1]);
-                }
-                if (arrow.classList.contains("jsNext")) {
-                    targetSlide = currSlide.nextElementSibling;
-                    script_button.append(slides[0]);
-                }
+                targetSlide = currSlide.nextElementSibling;
+                currSlide.addEventListener("transitionend", (() => {}));
+                script_button.append(slides[0]);
                 targetSlide.classList.add("is-selected");
             }));
         };
