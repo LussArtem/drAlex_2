@@ -437,11 +437,11 @@ body::after {
     align-items: center;
     text-align: center;
     position: relative;
-    max-width: 99%;
+    max-width: 106%;
     margin-left: auto;
     margin-right: auto;
     -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
-    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
     &-item {
         font-weight: 300;
         white-space: nowrap;
@@ -453,36 +453,7 @@ body::after {
         padding: 0 40px;
         animation: printText 20s linear infinite;
     }
-    // &::before,
-    // &::after {
-    //     content: '';
-    //     display: block;
-    //     height: 100%;
-    //     width: 100px;
-    //     position: absolute;
-    //     top: 0;
-    //     z-index: 5;
-    // }
-    // &::before {
-    //     left: 0;
-    //     background-image: linear-gradient(to left, rgba(255, 255, 255, 0), var(--primary) 75%);
-    // }
-    // &::after {
-    //     right: 0;
-    //     background-image: linear-gradient(to right, rgba(255, 255, 255, 0), var(--primary) 75%);
-    // }
 }
-
-// @keyframes printText {
-//     0% {
-//         transform: translateZ(0);
-//     }
-
-//     100% {
-//         transform: translate3d(-100%, 0, 0);
-//     }
-// }
-
 @keyframes printText {
     to {
         transform: translate(calc(-100% - 0.1rem));

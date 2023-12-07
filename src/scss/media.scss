@@ -800,6 +800,10 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .can__body ul:not(:first-child) {
+        display: none;
+    }
+
     .catalog__breadcrumbs {
         display: none;
     }
