@@ -63,16 +63,22 @@
         span {
             position: relative;
             top: 12px;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease-out;
+            transform: translateY(-150%);
+            transition: transform 0.5s ease-out;
         }
 
         span.is-selected {
-            transform: translateY(0);
+            transform: translateY(0%);
+            transition: transform 0.5s ease-out;
         }
         span.is-selected ~ span {
-            transform: translateY(100%);
+            transform: translateY(70%);
+            transition: transform 0.5s ease-out;
         }
+        // span.next {
+        //     transform: translateY(-10%);
+        //     transition: transform 0.5s ease-out;
+        // }
     }
 
     &__phone {
