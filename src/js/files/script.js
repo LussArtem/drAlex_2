@@ -32,7 +32,7 @@ const currentTheme = localStorage.getItem('theme')
 // функция смены темы
 toggleColorTheme.addEventListener('click', (e) => {
     e.preventDefault()
-    mixSpan()
+    Array.from(toggleColorTheme.children)
     root.classList.toggle('light')
     if (Array.from(root.classList).includes('light')) {
         localStorage.setItem('theme', 'light')
@@ -55,14 +55,6 @@ function createIcon(theme, theme2) {
         `<span class="_icon-${theme}" ></span>
     <span class="_icon-${theme2} is-selected"></span>`
     )
-}
-
-function mixSpan() {
-    //
-    // for (let i = toggleColorTheme.children.length - 2; i >= 0; i--) {
-    //     toggleColorTheme.appendChild(toggleColorTheme.children[i])
-    // }
-    let A = Array.from(toggleColorTheme.children)
 }
 
 // // клик
@@ -110,20 +102,16 @@ button.prepend(slides[slides.length - 1])
 const handleArrowClick = (arrow) => {
     arrow.addEventListener('click', () => {
         slides = [...button.children]
+
         const currSlide = button.querySelector('.is-selected')
+
         currSlide.classList.remove('is-selected')
         let targetSlide
 
-        if (arrow.classList.contains('jsPrev')) {
-            targetSlide = currSlide.previousElementSibling
-            button.prepend(slides[slides.length - 1])
-        }
-
-        if (arrow.classList.contains('jsNext')) {
-            targetSlide = currSlide.nextElementSibling
-            button.append(slides[0])
-        }
-
+        targetSlide = currSlide.nextElementSibling
+        // delete
+        currSlide.addEventListener('transitionend', () => {})
+        button.append(slides[0])
         targetSlide.classList.add('is-selected')
     })
 }
