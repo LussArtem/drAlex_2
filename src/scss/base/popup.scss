@@ -440,8 +440,8 @@ body::after {
     max-width: 106%;
     margin-left: auto;
     margin-right: auto;
-    -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
-    mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+    -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 80%, transparent);
+    mask: linear-gradient(90deg, transparent, white 10%, white 80%, transparent);
     &-item {
         font-weight: 300;
         white-space: nowrap;
