@@ -451,7 +451,7 @@ body::after {
             1px 1px 0 rgb(159, 26, 57), 1px -1px 0 rgb(159, 26, 57), -1px 1px 0 rgb(159, 26, 57), -1px -1px 0 rgb(159, 26, 57);
         color: var(--primary);
         padding: 0 40px;
-        animation: printText 20s linear infinite;
+        animation: printText 25s linear infinite;
     }
 }
 @keyframes printText {
