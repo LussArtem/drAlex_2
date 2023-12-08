@@ -1710,10 +1710,10 @@ body::after {
   max-width: 106%;
   margin-left: auto;
   margin-right: auto;
-  -webkit-mask: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(10%, white), color-stop(90%, white), to(transparent));
-  -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
-  mask: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(10%, white), color-stop(90%, white), to(transparent));
-  mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+  -webkit-mask: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(10%, white), color-stop(80%, white), to(transparent));
+  -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 80%, transparent);
+  mask: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(10%, white), color-stop(80%, white), to(transparent));
+  mask: linear-gradient(90deg, transparent, white 10%, white 80%, transparent);
 }
 
 .page__text-item {
@@ -1725,8 +1725,8 @@ body::after {
   text-shadow: 0px 1px 0 rgb(159, 26, 57), 0px -1px 0 rgb(159, 26, 57), 1px 0px 0 rgb(159, 26, 57), -1px 0px 0 rgb(159, 26, 57), 1px 1px 0 rgb(159, 26, 57), 1px -1px 0 rgb(159, 26, 57), -1px 1px 0 rgb(159, 26, 57), -1px -1px 0 rgb(159, 26, 57);
   color: var(--primary);
   padding: 0 40px;
-  -webkit-animation: printText 20s linear infinite;
-          animation: printText 20s linear infinite;
+  -webkit-animation: printText 25s linear infinite;
+          animation: printText 25s linear infinite;
 }
 
 @-webkit-keyframes printText {
@@ -2516,9 +2516,25 @@ body::after {
   -ms-grid-columns: (1fr)[3];
   grid-template-columns: repeat(3, 1fr);
   position: relative;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
   z-index: 2;
-  -webkit-filter: blur(2px);
-          filter: blur(2px);
+}
+
+.can__body::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  display: block;
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+  z-index: 49;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .can__column {
@@ -6170,8 +6186,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
 @media (max-width: 650px) {
   .header__toggle-color {
-    min-width: 35px;
-    height: 35px;
+    min-width: 45px;
+    height: 45px;
   }
 
   .header__button-desktop {
