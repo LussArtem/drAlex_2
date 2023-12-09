@@ -211,7 +211,8 @@
 
     .printing__header,
     .types__header,
-    .masonry__header {
+    .masonry__header,
+    .sets__header {
         margin-bottom: 2.9375rem;
     }
 
@@ -1053,7 +1054,8 @@
 
     .printing__header,
     .types__header,
-    .masonry__header {
+    .masonry__header,
+    .sets__header {
         margin-bottom: 0.625rem;
     }
 
@@ -2155,16 +2157,18 @@
     @supports (margin-bottom: clamp(0.625rem, 0.0282258065rem + 2.9838709677vw, 2.9375rem)) {
         .printing__header,
         .types__header,
-        .masonry__header {
-            margin-bottom: clamp(0.625rem, 0.0282258065rem + 2.9838709677vw, 2.9375rem);
+        .masonry__header,
+        .sets__header {
+            margin-bottom: clamp(1.625rem, 0.0282258065rem + 2.9838709677vw, 2.9375rem);
         }
     }
 
     @supports not (margin-bottom: clamp(0.625rem, 0.0282258065rem + 2.9838709677vw, 2.9375rem)) {
         .printing__header,
         .types__header,
-        .masonry__header {
-            margin-bottom: calc(0.625rem + 2.3125 * (100vw - 20rem) / 77.5);
+        .masonry__header,
+        .sets__header {
+            margin-bottom: calc(1.625rem + 2.3125 * (100vw - 20rem) / 77.5);
         }
     }
 

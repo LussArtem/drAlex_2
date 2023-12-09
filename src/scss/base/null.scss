@@ -35,12 +35,14 @@ body {
 }
 input,
 button,
-textarea {
+textarea,
+address {
     font-family: $fontFamily;
     font-size: inherit;
     line-height: inherit;
 }
-button {
+button,
+address {
     cursor: pointer;
     color: inherit;
     background-color: transparent;

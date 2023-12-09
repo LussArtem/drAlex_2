@@ -4,6 +4,7 @@
         position: relative;
         width: 100%;
         overflow: hidden;
+        @include adaptiveValue('margin-bottom', 100, 40);
     }
     &__item {
         position: absolute;

@@ -3,7 +3,7 @@
     padding-bottom: 15px;
     border-top: 1px solid var(--inverse);
     border-bottom: 1px solid var(--inverse);
-    @include adaptiveValue('margin-bottom', 30, 10, 0);
+    @include adaptiveValue('margin-bottom', 30, 20, 0);
 
     &__list {
         display: flex;
