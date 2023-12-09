@@ -10,7 +10,7 @@
     }
 
     &__body {
-        @include adaptiveValue('margin-top', 20, 97.5, 1);
+        @include adaptiveValue('margin-top', 20, 40, 1);
         position: relative;
         border-top: 1px solid var(--inverse);
         display: flex;
