@@ -6934,15 +6934,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     }
 }
 
-@supports (margin-top: clamp( 1.25rem , 7.5157683486rem  +  -7.1100917431vw , 6.09375rem )) {
+@supports (margin-top: clamp( 1.25rem , 2.8669724771rem  +  -1.8348623853vw , 2.5rem )) {
     .works__body {
-      margin-top: clamp( 1.25rem , 7.5157683486rem  +  -7.1100917431vw , 6.09375rem );
+      margin-top: clamp( 1.25rem , 2.8669724771rem  +  -1.8348623853vw , 2.5rem );
     }
 }
 
-@supports not (margin-top: clamp( 1.25rem , 7.5157683486rem  +  -7.1100917431vw , 6.09375rem )) {
+@supports not (margin-top: clamp( 1.25rem , 2.8669724771rem  +  -1.8348623853vw , 2.5rem )) {
     .works__body {
-      margin-top: calc(6.09375rem + -4.84375 * (100vw - 20rem) / 68.125);
+      margin-top: calc(2.5rem + -1.25 * (100vw - 20rem) / 68.125);
     }
 }
 
