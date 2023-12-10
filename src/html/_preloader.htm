@@ -177,16 +177,17 @@
 					showLineLoad = document.querySelector('.preloader__line span');
 				}
 			}, 10);
+			let checkScriptsIntervalDelay
 			const checkScriptsInterval = setInterval(() => {
 				const mainScriptsTag = document.querySelector('[data-main-script]');
 				if (mainScriptsTag) {
-
 					clearInterval(checkScriptsInterval);
 					let preloaderImages = document.querySelectorAll('source, video');
-					// TO-DO img preloader
+					// console.log(preloaderImages)
 					const preloaderStyle = document.querySelector('.preloader-style');
 					if (preloaderImages.length) {
-						const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 40;
+						checkScriptsIntervalDelay = 10
+						const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 100;
 						let imagesLoadedCount = counter = progress = 0;
 						htmlDocument.classList.add('loading');
 						htmlDocument.classList.add('lock');
@@ -268,13 +269,15 @@
 							}, 300);
 						}
 					} else {
+						checkScriptsIntervalDelay = 400
+						console.log(checkScriptsIntervalDelay)
 						if (preloaderStyle) {
 							preloaderStyle.remove();
 						}
 						preloaderContainer.remove();
 					}
 				}
-			}, 10);
+			}, checkScriptsIntervalDelay);
 		})();
 	</script>
 </div>
