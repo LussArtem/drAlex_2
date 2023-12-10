@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231209211301">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231210205236">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -199,16 +199,17 @@
 					showLineLoad = document.querySelector('.preloader__line span');
 				}
 			}, 10);
+			let checkScriptsIntervalDelay
 			const checkScriptsInterval = setInterval(() => {
 				const mainScriptsTag = document.querySelector('[data-main-script]');
 				if (mainScriptsTag) {
-
 					clearInterval(checkScriptsInterval);
 					let preloaderImages = document.querySelectorAll('source, video');
-					// TO-DO img preloader
+					// console.log(preloaderImages)
 					const preloaderStyle = document.querySelector('.preloader-style');
 					if (preloaderImages.length) {
-						const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 40;
+						checkScriptsIntervalDelay = 10
+						const intervalDelayCuonter = 4 * preloaderImages.length < 40 ? 4 * preloaderImages.length : 100;
 						let imagesLoadedCount = counter = progress = 0;
 						htmlDocument.classList.add('loading');
 						htmlDocument.classList.add('lock');
@@ -290,13 +291,15 @@
 							}, 300);
 						}
 					} else {
+						checkScriptsIntervalDelay = 400
+						console.log(checkScriptsIntervalDelay)
 						if (preloaderStyle) {
 							preloaderStyle.remove();
 						}
 						preloaderContainer.remove();
 					}
 				}
-			}, 10);
+			}, checkScriptsIntervalDelay);
 		})();
 	</script>
 </div>
@@ -537,14 +540,14 @@
 						<a aria-label="Калининград,
 					Königsberg Cathedral" href="https://goo.gl/maps/EWqWYkj4M3mp9iSJ7" target="_blank" class="footer__location">Калининград,
 							Königsberg Cathedral</a>
-						<a aria-label="+7 921 072 9957" href="tel:+380666225191" class="footer__phone">+7 921 072 9957</a>
+						<a aria-label="+7 921 072 9957" href="tel:+79210729957" class="footer__phone">+7-921-072-9957</a>
 						<a aria-label="Alexgubkin@mail.ru" href="mailto:Alexgubkin@mail.ru" class="footer__mail">Alexgubkin@mail.ru</a>
 					</address>
 				</div>
 				<div class="footer__column footer__column-last">
 					<nav class="footer__menu menu-footer">
 						<ul class="menu-footer__list">
-							<li><a aria-label="Главная" href="/index.html">Главная</a></li>
+							<li><a aria-label="Главная" href="index.html">Главная</a></li>
 							<li><a aria-label="Прошедшее" data-goto=".types" href="#">Прошедшее</a></li>
 							<li><a aria-label="Отзывы" data-goto=".reviews" href="#">Отзывы</a></li>
 							<li><a aria-label="В начало" data-goto=".mainscreen" href="#">В начало</a>
@@ -763,7 +766,7 @@
 			</div>
 		</div>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231209211301"></script>
+	<script data-main-script src="js/app.min.js?_v=20231210205236"></script>
 </body>
 
 </html>
