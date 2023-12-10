@@ -426,7 +426,7 @@
     }
 
     .cart {
-        padding-top: 9.0625rem;
+        padding-top: 4.0625rem;
         margin-bottom: 7.5rem;
     }
 
@@ -1269,7 +1269,7 @@
     }
 
     .cart {
-        padding-top: 6.25rem;
+        padding-top: 4.25rem;
         margin-bottom: 4.375rem;
     }
 
@@ -3062,13 +3062,13 @@
 
     @supports (padding-top: clamp(6.25rem, 5.5241935484rem + 3.6290322581vw, 9.0625rem)) {
         .cart {
-            padding-top: clamp(6.25rem, 5.5241935484rem + 3.6290322581vw, 9.0625rem);
+            padding-top: clamp(4.25rem, 5.5241935484rem + 3.6290322581vw, 4.0625rem);
         }
     }
 
     @supports not (padding-top: clamp(6.25rem, 5.5241935484rem + 3.6290322581vw, 9.0625rem)) {
         .cart {
-            padding-top: calc(6.25rem + 2.8125 * (100vw - 20rem) / 77.5);
+            padding-top: calc(4.25rem + 2.8125 * (100vw - 20rem) / 77.5);
         }
     }
 
