@@ -72,7 +72,7 @@ body::after {
     visibility: hidden;
     transform: scale(0);
     transition: transform 0.3s ease 0s;
-    background-color: #eee;
+    background-color: var(--bg-secondary);
     padding: 20px;
     width: 100%;
     max-width: 900px;
@@ -84,6 +84,9 @@ body::after {
 }
 
 ////////////////////////////////////////////////////////////////////  SIZE
+.size-popup__title {
+    color: var(--primary);
+}
 .size-popup__row {
     display: grid;
 
@@ -120,7 +123,7 @@ body::after {
     background-color: var(--primary);
     color: var(--accent);
     font-family: stolzl_regular;
-    border-radius: 100px;
+    border-radius: 10px;
 }
 
 .size-popup__footer {
@@ -350,6 +353,10 @@ body::after {
 //////////////////////////////////////////////////////////////////// RETURN
 .return-popup__block:last-child {
     margin-bottom: 33px;
+}
+.return-popup__icon {
+    display: flex;
+    align-items: center;
 }
 
 .return-popup__head {

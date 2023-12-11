@@ -27,6 +27,14 @@
     transform: translate(-50%, -50%);
 }
 
+.minus::before {
+    position: absolute;
+    left: 50%;
+    top: -20%;
+    transform: translate(-50%, 0%);
+    font-size: x-small;
+}
+
 .color {
     color: var(--inverse);
 }
