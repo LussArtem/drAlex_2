@@ -21,6 +21,18 @@
             }
         }
     }
+    &-one_color {
+        color: var(--const-color);
+        border: 1px solid var(--const-color);
+        @media (any-hover: hover) {
+            &:hover {
+                filter: drop-shadow(2px 4px 6px white);
+                background-color: var(--accent);
+                border: 1px solid var(--accent);
+                color: var(--const-color);
+            }
+        }
+    }
     &-accent {
         background-color: var(--accent);
         border: 1px solid var(--accent);

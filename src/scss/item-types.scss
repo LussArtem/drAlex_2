@@ -36,6 +36,10 @@
     word-wrap: break-word;
 }
 
+.item-types__title-white {
+    color: var(--const-color);
+}
+
 .item-types__img {
     position: relative;
     width: 100%;
@@ -64,6 +68,9 @@
     line-height: 1.4285714286;
     font-family: stolzl_regular;
     font-weight: 400;
+}
+.item-types__desc-white {
+    color: var(--const-color);
 }
 
 .item-types__icon {
