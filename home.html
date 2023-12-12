@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231210205236">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231212220005">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -345,7 +345,7 @@
 							</a>
 						</li>
 					</ul>
-					<button aria-label="Получить приглашение" data-popup="#calculate" type="button" class="header__button header__button-desktop button button-accent">
+					<button aria-label="Получить приглашение" data-popup="#info" type="button" class="header__button header__button-desktop button button-accent">
 						Получить приглашение
 					</button>
 					<button type="button" aria-label="Меню" class="header__burger icon-menu">
@@ -353,7 +353,7 @@
 					</button>
 				</div>
 				<div class="header__menu">
-					<button data-popup="#calculate" aria-label="Рассчитать стоймость" data-da=".header__menu, 650, last" type="button" class="header__button header__button-mobile button button-accent">
+					<button data-popup="#info" aria-label="Рассчитать стоймость" data-da=".header__menu, 650, last" type="button" class="header__button header__button-mobile button button-accent">
 						Получить Invite!
 					</button>
 				</div>
@@ -531,7 +531,7 @@
 			</section>
 			<section id="types" class="types">
 				<div class="page__text types__txt">
-					<div class="page__text-item">ТВОЙ INVITE / 2023 /</div>
+					<div class="page__text-item">ТВОЙ INVITE / 2024 /</div>
 					<div class="page__text-item">ТВОЙ INVITE / 2024 /</div>
 				</div>
 				<div class="types__container">
@@ -540,63 +540,91 @@
 							Последние Invitы
 						</h2>
 					</div>
-					<div data-prlx-parent data-prlx-smooth="500" class="types__body swiper">
+					<div data-prlx-parent data-prlx-smooth="80" class="types__body swiper">
 						<div class="types__wrapper swiper-wrapper">
 							<article class="types__item item-types swiper-slide">
-								<h3 class="item-types__title">Какой август?</h3>
-								<div data-prlx class="item-types__img">
-									<picture>
-										<source srcset="img/ivent/4-mobile.webp" media="(max-width: 1024px)">
-										<source srcset="img/ivent/4.webp" type="image/webp">
-										<img src="img/user.png" data-src="img/ivent/4.png" alt="direct printing">
-									</picture>
-
+								<h3 class="item-types__title item-types__title-white">Какой август?</h3>
+								<div data-prlx class="item-types__img" style="background-image: url(img/ivent/4.2.png);">
 								</div>
 								<div class="item-types__footer">
-									<p class="item-types__desc">
+									<p class="item-types__desc item-types__desc-white">
 										решать только тебе
 									</p>
-									<button aria-label="INVITE" data-popup="#orderPrint" type="button" class="item-types__button button button-inverse">
+									<button aria-label="INVITE" data-popup="#question" type="button" class="item-types__button button button-one_color">
 										INVITE
 									</button>
 								</div>
 							</article>
 							<article class="types__item item-types swiper-slide">
-								<h3 class="item-types__title">бессоный май</h3>
-								<div data-prlx class="item-types__img">
-									<picture>
-										<source srcset="img/ivent/2-mobile.webp" media="(max-width: 1024px)">
-										<source srcset="img/ivent/2.webp" type="image/webp">
-										<img src="img/user.png" data-src="img/ivent/2.png" alt="direct printing">
-									</picture>
-								</div>
-								<div class="item-types__footer">
-									<p class="item-types__desc">
-										время когда было трудно уснуть
-									</p>
-									<button aria-label="Смотреть" data-popup="#orderPrint" type="button" class="item-types__button button button-inverse">
-										Смотреть
-									</button>
-								</div>
+								<a href="#">
+									<h3 class="item-types__title item-types__title-white">бессоный май</h3>
+									<div data-prlx class="item-types__img" style="background-image: url(img/ivent/3.1.png);">
+									</div>
+									<div class="item-types__footer">
+										<p class="item-types__desc item-types__desc-white">
+											время когда было трудно уснуть
+										</p>
+										<button aria-label="INVITE" data-popup="#question" type="button" class="item-types__button button button-one_color">
+											INVITE
+										</button>
+									</div>
+								</a>
 							</article>
 							<article class="types__item item-types swiper-slide">
-								<h3 class="item-types__title">Яркий Апрель</h3>
-								<div class="item-types__img">
-									<picture>
-										<source srcset="img/ivent/3-mobile.webp" media="(max-width: 1024px)">
-										<source srcset="img/ivent/3.webp" type="image/webp">
-										<img src="img/user.png" data-src="img/ivent/3.png" alt="direct printing">
-									</picture>
-								</div>
-								<div class="item-types__footer">
-									<p class="item-types__desc">
-										Было давно, но не менее круто!
-									</p>
-									<button aria-label="Смотреть" data-popup="#orderPrint" type="button" class="item-types__button button button-inverse">
-										Смотреть
-									</button>
-								</div>
+								<a href="#">
+									<h3 class="item-types__title item-types__title-white">Яркий Апрель</h3>
+									<div data-prlx class="item-types__img" style="background-image: url(img/ivent/2.1.png);">
+									</div>
+									<div class="item-types__footer">
+										<p class="item-types__desc item-types__desc-white">
+											Было давно, но не менее круто!
+										</p>
+										<div aria-label="INVITE" data-popup="#question" type="button" class="item-types__button button button-one_color">
+											INVITE
+										</div>
+									</div>
+								</a>
 							</article>
+
+
+							<!-- <article class="types__item item-types swiper-slide">
+                    <h3 class="item-types__title">бессоный май</h3>
+                    <div data-prlx class="item-types__img">
+                        <picture>
+                            <source srcset="img/ivent/2-mobile.webp" media="(max-width: 1024px)">
+                            <source srcset="img/ivent/2.webp" type="image/webp">
+                            <img src="img/user.png" data-src="img/ivent/2.png" alt="direct printing">
+                        </picture>
+                    </div>
+                    <div class="item-types__footer">
+                        <p class="item-types__desc">
+                            время когда было трудно уснуть
+                        </p>
+                        <button aria-label="Смотреть" data-popup="#orderPrint" type="button"
+                            class="item-types__button button button-inverse">
+                            Смотреть
+                        </button>
+                    </div>
+                </article>
+                <article class="types__item item-types swiper-slide">
+                    <h3 class="item-types__title">Яркий Апрель</h3>
+                    <div class="item-types__img">
+                        <picture>
+                            <source srcset="img/ivent/3-mobile.webp" media="(max-width: 1024px)">
+                            <source srcset="img/ivent/3.webp" type="image/webp">
+                            <img src="img/user.png" data-src="img/ivent/3.png" alt="direct printing">
+                        </picture>
+                    </div>
+                    <div class="item-types__footer">
+                        <p class="item-types__desc">
+                            Было давно, но не менее круто!
+                        </p>
+                        <button aria-label="Смотреть" data-popup="#orderPrint" type="button"
+                            class="item-types__button button button-inverse">
+                            Смотреть
+                        </button>
+                    </div>
+                </article> -->
 						</div>
 						<div class="types__scrollbar scrollbar"></div>
 					</div>
@@ -1184,6 +1212,47 @@
 			</div>
 		</div>
 	</div>
+	<div id="question" aria-hidden="true" class="popup"> <!--cart page -->
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__size size-popup">
+					<button data-close type="button" class="popup__close _icon-close"></button>
+					<div class="size-popup__title">Ближайшие меропрития</div>
+					<div class="size-popup__body">
+						<div class="size-popup__row">
+							<div class="size-popup__label label-left">Локация</div>
+							<div class="size-popup__label">Дата</div>
+							<div class="size-popup__label label-right">Количество мест</div>
+						</div>
+						<div class="size-popup__row">
+							<div class="size-popup__item label-left">Курская коса</div>
+							<div class="size-popup__label">23.03.2024 <span class="minus _icon-eye1"></span>
+
+							</div>
+							<div class="size-popup__label label-right">48*</div>
+						</div>
+						<div class="size-popup__row">
+							<div class="size-popup__item label-left _icon-dj-lover"></div>
+							<div class="size-popup__label"></div>
+							<div class="size-popup__label label-right"></div>
+						</div>
+
+					</div>
+					<div class="size-popup__footer">
+						<div class="size-popup__text">
+							<p class="size-popup__text-item">Актуальное количество мест узнавайте у нас в телеграм канале
+							</p>
+							<!-- <p class="size-popup__text-item"></p> -->
+						</div>
+						<div class="size-popup__text">
+							<p><span class=" _icon-eye1"></span>:Даты могут отличаться</p>
+							<!-- <p><span>*B</span>: </p> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div id="calculate" aria-hidden="true" class="popup"> <!-- catalog -->
 		<div class="popup__wrapper">
 			<div class="popup__content">
@@ -1236,60 +1305,73 @@
 			</div>
 		</div>
 	</div>
-	<div id="return" aria-hidden="true" class="popup"> <!-- cart page-->
+	<div id="info" aria-hidden="true" class="popup"> <!-- cart page-->
 		<div class="popup__wrapper">
 			<div class="popup__content">
 				<div class="popup__return return-popup">
 					<button data-close type="button" class="popup__close _icon-close"></button>
-					<div class="return-popup__title">Доставка та повернення</div>
+					<div class="return-popup__title">Получить приглашение</div>
 					<div class="return-popup__body">
 						<div class="return-popup__block">
 							<div class="return-popup__head">
-								<div class="return-popup__label">Кур'єр на вашу адресу</div>
+								<div class="return-popup__label">Написать в телеграм</div>
 								<div class="return-popup__icon">
-									<img src="img/icon/pochta.svg" alt="*">
+									<img src="img/icon/arrow-bottom.svg" alt="*">
 								</div>
 							</div>
 							<div class="return-popup__content">
 								<div class="return-popup__text">
-									<p>Кур'єр Нової пошти. Вартість від<b> 55 гривень.</b></p>
-									<p>Термін доставки<b> 1-2 дні.</b></p>
+									<p>Ответим в течении 12 часов<b> подскажем по оплате</b></p>
 								</div>
-								<div class="return-popup__price">55 грн / 1-2 дні</div>
+								<div class="return-popup__price">
+									<a aria-label="Ссылка на телеграм" href="https://t.me/alexgubkiin">
+										<svg width="17" height="14" viewBox="0 0 17 14" fill="var(--svg-primary)">
+											<use xlink:href="img/icons/icons.svg#telegram"></use>
+										</svg>
+									</a>
+								</div>
 							</div>
 						</div>
 						<div class="return-popup__block">
 							<div class="return-popup__head">
-								<div class="return-popup__label">Самовивіз із Нової пошти</div>
+								<div class="return-popup__label">Написать в instagram <span class="minus _icon-eye1"></span>
+								</div>
 								<div class="return-popup__icon">
-									<img src="img/icon/pochta.svg" alt="*">
+									<img src="img/icon/arrow-bottom.svg" alt="*">
 								</div>
 							</div>
 							<div class="return-popup__content">
 								<div class="return-popup__text">
-									<p>Вартість доставки за тарифом Нової пошти від<b> 35 гривень.</b></p>
-									<p>Термін доставки<b> 1-3 дні.</b></p>
+									<p>Ответим в течении 24 часов<b> подскажем по оплате</b></p>
+									<p> <span style="padding-left: 16px;" class="minus _icon-eye1"> </span> META
+										<b>Запрещена</b> в России
+									</p>
 								</div>
-								<div class="return-popup__price">35 грн / 1-3 дні</div>
+								<div class="return-popup__price">
+									<a aria-label="Ссылка на инстаграм" href="https://instagram.com/invvitted?igshid=YmMyMTA2M2Y=">
+										<svg width="17" height="17" viewBox="0 0 17 17" fill="var(--svg-primary)">
+											<use xlink:href="img/icons/icons.svg#instagram"></use>
+										</svg>
+									</a>
+								</div>
 							</div>
 						</div>
 						<div class="return-popup__block">
 							<div class="return-popup__head">
-								<div class="return-popup__label">Самовивіз з офісу</div>
+								<div class="return-popup__label">Оплатить на сайте</div>
 								<div class="return-popup__icon _icon-order"></div>
 							</div>
 							<div class="return-popup__content">
 								<div class="return-popup__text">
-									<p><b>Важливо!</b> За попередньою домовленістю з менеджером.
-										Вулиця Вчительська, 30, Гнідин, Київська обл., 08340
-										Графік роботи: <b>Пн-Пт 10:00 - 18:30.</b></p>
+									<p><b>Извините</b> за предоставленные неудобства.
+										В настоящее время оплата онлайн недоступна.
+										Мы пытаемся это исправить <b>:(</b></p>
 								</div>
-								<div class="return-popup__price">Безкоштовно</div>
+								<div class="return-popup__price"><span class="_icon-close"></span></div>
 							</div>
 						</div>
 						<div class="return-popup__footer">
-							<p>При замовленні одягу без друку на суму до 500 гривень повна передоплата;</p>
-							<p>При замовленні на суму вище 500 гривень можлива передоплата 50%, залишок при отриманні.</p>
+							<p>Пожалуйста ознакомтесь <a href="about-us.html">Публичной офертой</a></p>
 						</div>
 					</div>
 				</div>
@@ -1354,7 +1436,7 @@
 			</div>
 		</div>
 	</div>
-	<script data-main-script src="js/app.min.js?_v=20231210205236"></script>
+	<script data-main-script src="js/app.min.js?_v=20231212220005"></script>
 </body>
 
 </html>
